@@ -1,0 +1,12 @@
+org,municipality,tier,population_approx,decisions,awards,awards_afm_pct,awards_amount_pct,awards_with_amount,threshold_hug_count,hug_rate_pct,top_vendor_afm,top_vendor_awards,top_vendor_share_pct,payments,payments_amount_pct,notable_blank_clusters
+6166,ΛΑΜΙΑ,peer,75000,67878,10844,59,59,6440,8,0.12,997947560,474,4.4,25581,3,"lawyer mandates x54/x53; green mgmt x35"
+6272,ΣΕΡΡΕΣ,peer,76000,61688,1586,2,83,1312,73,5.56,997657764,5,0.3,34935,0,"98% supplier-anonymous awards"
+6298,ΤΡΙΚΑΛΑ,peer,81000,60749,6991,94,97,6779,50,0.74,108689195,357,5.1,26697,0,"best metadata quality in cohort"
+6154,ΚΟΖΑΝΗ,peer,71000,45584,4380,26,74,3235,59,1.82,094111676,27,0.6,14,0,"AΠΕ approval clusters x80/x61"
+6135,ΚΑΡΔΙΤΣΑ,peer,56000,59326,2709,0,1,17,0,,—,0,,34869,0,"TOTAL award metadata failure: 0% AFM 1% amounts"
+6030,ΑΜΦΙΚΛΕΙΑ-ΕΛΑΤΕΙΑ,small,10000,23913,1459,96,97,1419,42,2.96,045301676,60,4.1,10236,0,
+6079,ΔΟΜΟΚΟΣ,small,11000,25453,1646,2,98,1607,101,6.29,144116476,2,0.1,13552,0,"insurance award cluster x45"
+6176,ΛΟΚΡΟΙ,small,19000,49159,6574,39,53,3513,11,0.31,043850694,108,1.6,21715,0,"blank clusters x669/x497/x330 — largest atomization+opacity in cohort"
+6179,ΜΑΚΡΑΚΩΜΗ,small,15000,25962,3097,59,99,3054,176,5.76,041953792,89,2.9,8670,0,"highest hug-rate; fleet repair cluster x30"
+6202,ΚΑΜΕΝΑ ΒΟΥΡΛΑ,small,15000,29041,3157,82,96,3031,31,1.02,997947687,2226,70.5,14003,0,"ONE VENDOR HOLDS 70% OF ALL AWARDS; fleet-committee boilerplate x53 (same as Lamia)"
+6289,ΣΤΥΛΙΔΑ,small,12000,21906,1284,86,99,1270,63,4.96,092624702,51,4.0,8112,0,"top vendor is SAME AFM as Lamia atomized vendor 092624702"

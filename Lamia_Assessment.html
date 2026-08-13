@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lamia — Procurement Intelligence Brief</title>
+<style>
+  :root{--ink:#1a1d23;--paper:#faf8f4;--muted:#6b6f78;--line:#e3ded4;--accent:#b0492c;--accent2:#2c6e63;--amber:#a87b18;--card:#fff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:Georgia,serif;line-height:1.62}
+  .wrap{max-width:860px;margin:0 auto;padding:0 26px}
+  header{padding:56px 0 36px;border-bottom:3px double var(--line)}
+  .kicker{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:36px;line-height:1.15;font-weight:normal;margin-bottom:14px}
+  .verdict{font-size:20px;font-style:italic;color:#3a3325;border-left:3px solid var(--accent);padding-left:18px;margin:18px 0 8px}
+  .meta{font-family:Helvetica,Arial,sans-serif;font-size:11.5px;color:var(--muted);margin-top:16px;letter-spacing:.04em}
+  section{padding:40px 0 8px}
+  h2{font-size:25px;font-weight:normal;margin-bottom:18px}
+  p{margin-bottom:14px;font-size:16.5px}
+  .insight{background:var(--card);border:1px solid var(--line);margin:0 0 22px;padding:0}
+  .insight .head{display:flex;align-items:baseline;gap:14px;padding:16px 22px 10px;border-bottom:1px solid var(--line)}
+  .insight .rank{font-family:Helvetica,Arial,sans-serif;font-size:26px;font-weight:bold;color:var(--accent)}
+  .insight h3{font-size:19.5px;font-weight:bold}
+  .insight .body{padding:14px 22px 4px}
+  .insight .body p{font-size:15.5px}
+  .sowhat{background:#f2efe7;padding:12px 22px;font-size:15px;border-top:1px solid var(--line)}
+  .sowhat b{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);display:block;margin-bottom:4px}
+  .heat{font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;color:#fff;margin-left:auto}
+  .heat.h{background:var(--accent)} .heat.m{background:var(--amber)} .heat.c{background:var(--accent2)}
+  .ada{font-family:Menlo,monospace;font-size:12.5px;color:var(--accent2);white-space:nowrap}
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px}
+  th{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:7px 9px}
+  td{border-bottom:1px solid var(--line);padding:9px;vertical-align:top}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
+  .dot.g{background:var(--accent2)} .dot.a{background:var(--amber)} .dot.r{background:var(--accent)}
+  .note{background:#f2efe7;border:1px dashed #c9c1af;padding:18px 22px;margin:20px 0;font-size:14px;color:#555;font-family:Helvetica,Arial,sans-serif;line-height:1.6}
+  footer{border-top:3px double var(--line);margin-top:44px;padding:24px 0 56px;font-family:Helvetica,Arial,sans-serif;font-size:12px;color:var(--muted);line-height:1.7}
+  @media(max-width:640px){h1{font-size:28px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Public Tech · Diavgeia Intelligence Brief · Lamia</div>
+    <h1>Lamia: five insights from reading a city's entire public record</h1>
+    <p class="verdict">The town hall is not captured — it is casual, and its recurring money moves through channels built to avoid competition without ever breaking a rule. The hospital across town is where the euros and the anomalies actually concentrate. And the sharpest fixes cost almost nothing.</p>
+    <div class="meta">ΔΗΜΟΣ ΛΑΜΙΕΩΝ (6166) · ΓΝ ΛΑΜΙΑΣ (99221923) · 67,878 DECISIONS 2018–2026 · PDF-VERIFIED 2026 WINDOW · 10-MUNICIPALITY + 15-HOSPITAL BENCHMARKS · 2 JULY 2026</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The insights, ranked by heat</h2>
+
+    <div class="insight">
+      <div class="head"><span class="rank">1</span><h3>The hospital is the referable file — seven-figure direct medical purchases inside a book built for anonymity</h3><span class="heat h">hottest</span></div>
+      <div class="body">
+        <p>ΓΝ Λαμίας fires 8 of 9 automated fraud detectors — worst of 15 benchmarked hospitals (its size-twin, Serres, fires one). 64% of its awards publish no supplier identity; all 2,963 payment finalisations publish no amount. Verified in the residue after stripping misclassified records: <strong>€1.49M for osteosynthesis materials and €841k for neurosurgical supplies awarded by direct procedure</strong>, with more behind them.</p>
+      </div>
+      <div class="sowhat"><b>So what</b>If exception clauses fail scrutiny: contract invalidity and recovery claims. This is the file to put before the 5th Health Region and ΕΑΔ first — it outweighs everything municipal by an order of magnitude. Responsibility sits with the hospital's Governor and Board; the municipality has none.</div>
+    </div>
+
+    <div class="insight">
+      <div class="head"><span class="rank">2</span><h3>The town hall's real leak is not the big contract — it's €864k dripped through 2,000+ micro-awards to eight vendors</h3><span class="heat h">hottest</span></div>
+      <div class="body">
+        <p>Eight suppliers hold 195–474 direct awards each (2018–2026), €50–160k per relationship, zero tenders. Four vendor-years already exceed the €30,000 annual line — the worst: <strong>€50,841 to one vendor in 2025 across 66 separate awards</strong>. Every award is individually legal; every relationship is a divided annual contract. One of these vendors runs the same model in neighbouring Στυλίδα, where it is the top supplier.</p>
+      </div>
+      <div class="sowhat"><b>So what</b>This is where competitive savings die: at typical 5–15% competitive tension, €45–130k foregone. The remedy is boring and cheap — framework contracts for recurring supply. Until then, each new vendor-year over €30k is a potential disallowance at the Court of Audit.</div>
+    </div>
+
+    <div class="insight">
+      <div class="head"><span class="rank">3</span><h3>Threshold engineering appeared in 2026 — twin contracts at €19,964.00 each, prices ending in "…999"</h3><span class="heat h">hot</span></div>
+      <div class="body">
+        <p>Same contractor, same service, two districts, seven days apart, <strong>identical €19,964.00</strong> — €39,928 combined, above the single-contract tender line (<span class="ada">Ρ920ΩΛΚ-5ΓΙ</span>, <span class="ada">9Ν52ΩΛΚ-3ΩΝ</span>). Alongside: €14,999.77 (pool chemicals), €11,999.73 (printing). The historical archive shows <em>no</em> such bunching before 2026 — this is either new behaviour or newly visible, and the specifier of the tree works (a forester who also certifies the contractor's hours) is a standing annual incumbent alongside the contractor.</p>
+      </div>
+      <div class="sowhat"><b>So what</b>The clearest single Art. 6 / ν.4412 exposure at the municipality, with personal liability for authorising officers if confirmed. One document request settles it: the two cost estimates behind the twin awards. Signing authority: the Mayor and delegated deputy.</div>
+    </div>
+
+    <div class="insight">
+      <div class="head"><span class="rank">4</span><h3>Opacity is the enabling condition — and it's an administrative choice, fixable for free</h3><span class="heat m">structural</span></div>
+      <div class="body">
+        <p>One municipal committee published 63 of 63 vehicle-repair awards with blank supplier and amount fields — the data exists in the signed PDFs (we recovered it), it simply never reaches the searchable register. The hospital does the same at scale. Peer benchmarking shows the spectrum: Τρίκαλα publishes 94–97% complete and loses nothing by it; Καρδίτσα publishes essentially nothing (0% supplier IDs — across <em>both</em> its municipality and its hospital, a city-wide failure). Blank payment amounts are universal in all ten municipalities — a national platform norm, not a Lamia sin.</p>
+      </div>
+      <div class="sowhat"><b>So what</b>Every other finding in this brief was harder to establish because of this one. The fix costs nothing: fill the mandatory fields. Locally that's an instruction from the Mayor to one committee; nationally it's ΕΑΔ enforcement and a Ministry of Digital Governance validation rule (reject submissions with empty counterparty/amount on award types).</div>
+    </div>
+
+    <div class="insight">
+      <div class="head"><span class="rank">5</span><h3>Context that keeps it honest: Lamia is mid-table, and the district's small towns are worse</h3><span class="heat c">counterweight</span></div>
+      <div class="body">
+        <p>Against its four true size-peers, Lamia is unremarkable: lowest measured threshold-hugging (0.12% of priced awards, micro-skew caveat), middling identification (59%), best payment disclosure (3% vs 0% everywhere). No dominant vendor (top holds 4.4% of awards; carnival money spread across 13 local firms). The genuine outliers sit elsewhere: a 15k-resident town where <strong>one vendor holds 70% of all 3,157 awards</strong> (Καμένα Βούρλα), and hugging rates of 5–6% in Μακρακώμη, Δομοκός, Σέρρες.</p>
+      </div>
+      <div class="sowhat"><b>So what</b>Two implications. For Lamia: the story is "unguarded, not looted" — reforms are preventive, not punitive. For oversight policy: risk concentrates where scrutiny is thinnest — small municipalities and specific institutions (Καρδίτσα, Καμένα Βούρλα deserve this same treatment next, before Rhodes or anywhere else).</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Exposure at a glance</h2>
+    <table>
+      <tr><th>Use case</th><th>Money involved</th><th>Consequence if confirmed</th></tr>
+      <tr><td><span class="dot r"></span>Hospital large direct medical procurement</td><td><strong>≥ €2.33M verified</strong>, total pending re-classification — largest exposure in the file</td><td>Contract invalidity, recovery claims, ΕΑΔ referral</td></tr>
+      <tr><td><span class="dot r"></span>Atomized supply relationships (municipality)</td><td><strong>€864k visible</strong> (floor — 56% data fill); 4 vendor-years over €30k</td><td>Foregone savings €45–130k; disallowance risk</td></tr>
+      <tr><td><span class="dot r"></span>Threshold engineering 2026</td><td><strong>€66,928</strong> directly implicated</td><td>Art. 6 violation; personal liability of signers</td></tr>
+      <tr><td><span class="dot a"></span>Opaque fleet flow</td><td>≈ €100–160k/yr unsearchable (sample-verified as small+dispersed)</td><td>ν.3861/2010 non-compliance; audit impossibility</td></tr>
+      <tr><td><span class="dot a"></span>Recurring near-ceiling media payments</td><td>€27,900 in 2026; annual since 2018, cumulative unhydrated</td><td>Local-press independence risk</td></tr>
+    </table>
+    <p style="font-size:15px"><em>Aggregate: town hall ≈ low single-digit millions outside competitive discipline over eight years; hospital = millions in a single year. The asymmetry is the headline.</em></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Who answers for what</h2>
+    <p style="font-size:15px">Two legally unrelated entities — conflating them would be unfair to both.</p>
+    <table>
+      <tr><th>Finding</th><th>Responsible</th><th>Escalates to</th></tr>
+      <tr><td>Municipal awards, twins, atomization</td><td><strong>Municipality</strong>: Mayor (signing authority), delegated deputy, Economic Committee; framework-contract gap = Municipal Council</td><td>Decentralised Administration; Court of Audit; ΕΑΔ</td></tr>
+      <tr><td>Fleet-committee blanks</td><td>The 3-member committee + Environment Directorate; ultimately the Mayor; ΟΔΕ Διαύγειας</td><td>ΕΑΔ (Diavgeia compliance)</td></tr>
+      <tr><td>Hospital findings — all of them</td><td><strong>ΓΝ Λαμίας (separate ΝΠΔΔ)</strong>: Governor and Board. <em>Not the municipality.</em></td><td>5th Health Region; Ministry of Health; ΕΑΔ; Court of Audit</td></tr>
+      <tr><td>Blank payments nationally; register validation gaps</td><td>Each posting entity; platform rules: Ministry of Digital Governance</td><td>ΕΑΔ; ministerial circulars</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What would change this picture</h2>
+    <div class="note">
+      <strong>Five open items, in order of impact:</strong> (1) Hospital ΑΝΑΘΕΣΗ re-classification — separates true awards from tender-procedure acts and re-sizes the largest exposure; (2) the two cost estimates behind the twin tree awards; (3) CPV-level confirmation of the four over-€30k vendor-years; (4) hydration of the municipal €10–30k band — decides whether threshold engineering is new or newly visible; (5) ΓΕΜΗ resolution of the eight atomized AFMs and the 70%-vendor of Καμένα Βούρλα. Items 1, 4, 5 run on the local pipeline (scripts ready); 2 is a records request; 3 is a day's data work.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Method.</strong> Complete populations, not samples: 67,878 municipal decisions (2018–2026); all Δ.1 direct awards 13 Feb–31 Mar 2026 re-fetched live and cross-checked against signed PDFs; 6,301 PDF-recovered historical amounts; 10-municipality and 15-hospital benchmarks. Forensic battery: threshold-cliff, Benford, identical-amount, same-subject clustering, vendor-year aggregation. Negative results reported (no historical threshold bunching; mild Benford deviation only).</p>
+    <p><strong>Integrity note.</strong> Two earlier headline figures were retracted during this analysis after failing verification — a "€98M municipal spend" total and the hospital's "€47.7M / 28:1 direct-award ratio" — both contaminated by tender budgets recorded as spend in source tables. All euro figures above survive that audit. Facts are citable by ADA; nothing here asserts wrongdoing — each pattern carries a lawful explanation that only competent authorities (ΕΑΔ, Court of Audit) can weigh.</p>
+    <p>Public Tech project · pipelines in <code>Public Tech/scripts/</code> and <code>Greece_Public_diav/</code> · benchmark: <code>data/municipal_benchmark_2020_2026.csv</code></p>
+  </div>
+</footer>
+
+</body>
+</html>

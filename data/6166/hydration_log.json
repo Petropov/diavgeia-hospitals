@@ -1,0 +1,26 @@
+{
+  "successes": [],
+  "failures": [
+    {
+      "ada": "Ψ8ΣΝΩΛΚ-1ΤΜ",
+      "ts": "2026-05-14T10:46:26.714715",
+      "error": "unexpected:'ascii' codec can't encode character '\\u03a8' in position 28: ordinal not in range(128)"
+    },
+    {
+      "ada": "901ΓΩΛΚ-ΓΙΣ",
+      "ts": "2026-05-14T10:46:27.720662",
+      "error": "unexpected:'ascii' codec can't encode characters in position 31-34: ordinal not in range(128)"
+    },
+    {
+      "ada": "Ψ8ΣΝΩΛΚ-1ΤΜ",
+      "ts": "2026-05-14T10:46:44.310839",
+      "error": "url_error:Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "ada": "901ΓΩΛΚ-ΓΙΣ",
+      "ts": "2026-05-14T10:46:45.323497",
+      "error": "url_error:Tunnel connection failed: 403 Forbidden"
+    }
+  ],
+  "skipped": []
+}

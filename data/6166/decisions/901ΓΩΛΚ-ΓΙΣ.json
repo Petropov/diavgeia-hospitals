@@ -1,0 +1,24 @@
+{
+  "protocolNumber": "2/1/2026 Α.Δ.Ε.",
+  "subject": "Εντολή και πληρεξουσιότητα σε δικηγόρο για σύνταξη γνωμοδοτικού σημειώματος ΓΑΚ 4191/2025 & ΕΑΚ 2188/2025",
+  "issueDate": 1768435200000,
+  "organizationId": "6166",
+  "signerIds": ["100085865"],
+  "unitIds": ["100085897"],
+  "decisionTypeId": "Δ.1",
+  "extraFieldValues": {
+    "person": [
+      {"afm": "129992517", "name": "ΛΙΑΝΟΥΛΟΠΟΥΛΟΣ,,ΓΕΩΡΓΙΟΣ,ΑΛΕΞΙΟΣ", "enterName": false, "afmType": "EL"},
+      {"afm": "997947640", "name": "ΔΗΜΟΣ ΛΑΜΙΕΩΝ", "enterName": false, "afmType": "EL"}
+    ],
+    "awardAmount": {"amount": null, "currency": "EUR"},
+    "assignmentType": "Υπηρεσίες",
+    "cpv": ["79100000-5"],
+    "relatedDecisions": [],
+    "documentType": "ΠΡΑΞΗ"
+  },
+  "privateData": false,
+  "ada": "901ΓΩΛΚ-ΓΙΣ",
+  "status": "PUBLISHED",
+  "documentUrl": "https://diavgeia.gov.gr/doc/901ΓΩΛΚ-ΓΙΣ"
+}
