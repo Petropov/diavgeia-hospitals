@@ -56,6 +56,7 @@ Only stdlib. No API key. Be polite: default 0.4s between requests.
 """
 
 import argparse
+import os
 import csv
 import json
 import sys

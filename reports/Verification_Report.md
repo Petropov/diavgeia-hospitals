@@ -98,8 +98,13 @@ warrant value in both tested years; the remainder is identifiable (anonymous Χ�
 missing. Caveat: 2023 payroll share is estimated from 2024's proportions; parsing the
 Dec-2023 execution statement would remove the estimate.
 
-Housekeeping note: Rhodes' local Β.2.1 file only covers 2021–2023 (early partial pull;
-batch skipped it as non-empty) — refetch before any Β.2.1-based Rhodes claims.
+**Β.2.1 gap closed (same day):** full 5-yr refetch (2,874 decisions, raw responses
+archived). Screen found zero new errors — only the already-proven ×100 (6Ι4Α46907Κ-ΟΦΔ,
+€2,559,126 → €25,591.26) and the already-PDF-verified genuine SIEMENS €998,200. Corrected
+Rhodes Β.2.1 5-yr: **€38.0M** (€4.97M named + anonymous, incl. payroll batches). With both
+layers counted, Diavgeia captures **~94% of all official warrant value** for FY2024
+(€24.6M of €26.26M); the Β.2.1 layer contains payroll batches (ΜΙΣΘΟΔΟΣΙΑ), not only
+third-party spend.
 
 ## C. What this buys the project
 Every caveat in `Known_Unknowns.md` about undetected error now has a number: published
