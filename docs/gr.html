@@ -174,6 +174,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <tr><td>Σίτιση</td><td class="r">17</td><td class="r">1.058</td><td class="r">5.896 (Αττικόν)</td><td class="r">~56×</td></tr>
 <tr><td>Φύλαξη</td><td class="r">21</td><td class="r">629</td><td class="r">3.315 (Αττικόν)</td><td class="r">~33×</td></tr>
 </table>
+<p>Η πλήρης διακύμανση, νοσοκομείο-νοσοκομείο (μ.ό. 2024–25, €/κλίνη/έτος· οι μπάρες κλιμακώνονται ανά στήλη· ταξινομήσιμος· «—» = καμία ταυτοποιημένη εξωτερική δαπάνη, που μπορεί να σημαίνει ιδιοπαροχή ή αστοχία ταξινομητή):</p>
+<div style="overflow-x:auto">
+<table id="ctab">
+<thead><tr>
+<th data-k="name">Νοσοκομείο</th>
+<th class="r" data-k="energy_pb">Ενέργεια</th>
+<th class="r" data-k="cleaning_facility_pb">Καθαριότητα/facility</th>
+<th class="r" data-k="catering_pb">Σίτιση</th>
+<th class="r" data-k="security_pb">Φύλαξη</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
 <p><b>Αναγνώσεις.</b> Η ενέργεια είναι η πιο καθολική και πιο συγκρίσιμη κατηγορία — σχεδόν όλα τα νοσοκομεία αγοράζουν από τους ίδιους εθνικούς παρόχους, κι όμως το κόστος ανά κλίνη διαφέρει πολλαπλάσια· βαθμοημέρες θέρμανσης και ηλικία κτιρίων εξηγούν μόνο μέρος του εύρους. Είναι ο πιο ώριμος στόχος για συγκεντρωτικές προμήθειες. Το Αττικόν είναι πρώτο σε <em>κάθε</em> εξωτερικευμένη υπηρεσία — καθαριότητα, σίτιση, φύλαξη μαζί ~€18 χιλ./κλίνη/έτος· το αν αυτό αγοράζει καλύτερη υπηρεσία από τη γραμμή καθαριότητας των €427/κλίνη του Ευαγγελισμού είναι ακριβώς το ερώτημα λειτουργικής αποδοτικότητας που τα δεδομένα δεν απαντούν αλλά ένας επιθεωρητής θα μπορούσε. <b>Προσοχή:</b> χαμηλή ή απούσα τιμή εδώ μπορεί να σημαίνει ιδιοπαροχή, τοπικό προμηθευτή με όνομα που δεν έπιασε ο ταξινομητής (η ενέργεια της Ρόδου είναι τεκμηριωμένη αστοχία), ή δαπάνη μέσω του ανώνυμου στρώματος ΧΕ — η απουσία από τον πίνακα δεν είναι απόδειξη εξοικονόμησης.</p>
 
 <h3>Πανελλαδικοί προμηθευτές — ποιοι πουλούν σε όλο το σύστημα</h3>
@@ -219,6 +232,23 @@ fetch('hospitals.json').then(r=>r.json()).then(data=>{
     th.style.cursor='pointer';
     th.onclick=()=>{const k=th.dataset.k;
       cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;view();};
+  });
+});
+fetch('hospitals.json').then(r=>r.json()).then(data=>{
+  const cats=['energy_pb','cleaning_facility_pb','catering_pb','security_pb'];
+  const rowsAll=data.filter(h=>h.epb&&cats.some(c=>(h[c]||0)>=100));
+  const max={};cats.forEach(c=>max[c]=Math.max(...rowsAll.map(h=>h[c]||0)));
+  const cell=(v,c)=>v&&v>=100?`<td class="r"><div style="display:inline-block;background:#bcd4e6;height:.7em;width:${(v/max[c]*70).toFixed(0)}px;margin-right:4px"></div>${v.toLocaleString('el')}</td>`:'<td class="r">—</td>';
+  const tb=document.querySelector('#ctab tbody');
+  const render=rows=>{tb.innerHTML=rows.map(h=>
+    `<tr><td>${h.name}</td>${cats.map(c=>cell(h[c],c)).join('')}</tr>`).join('');};
+  let cur={k:'energy_pb',asc:false};
+  const view=()=>{render([...rowsAll].sort((a,b)=>{const x=a[cur.k]||0,y=b[cur.k]||0;
+    return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);}));};
+  view();
+  document.querySelectorAll('#ctab th').forEach(th=>{
+    th.style.cursor='pointer';
+    th.onclick=()=>{const k=th.dataset.k;cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;view();};
   });
 });
 fetch('suppliers.json').then(r=>r.json()).then(data=>{

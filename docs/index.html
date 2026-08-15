@@ -174,6 +174,19 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <tr><td>Catering</td><td class="r">17</td><td class="r">1,058</td><td class="r">5,896 (Αττικόν)</td><td class="r">~56×</td></tr>
 <tr><td>Security</td><td class="r">21</td><td class="r">629</td><td class="r">3,315 (Αττικόν)</td><td class="r">~33×</td></tr>
 </table>
+<p>The full variation, hospital by hospital (2024–25 average, €/bed/yr; bars scaled per column; sortable; "—" = no matched outsourced spend, which may mean in-house provision or a matcher miss):</p>
+<div style="overflow-x:auto">
+<table id="ctab">
+<thead><tr>
+<th data-k="name">Hospital</th>
+<th class="r" data-k="energy_pb">Energy</th>
+<th class="r" data-k="cleaning_facility_pb">Cleaning/facility</th>
+<th class="r" data-k="catering_pb">Catering</th>
+<th class="r" data-k="security_pb">Security</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
 <p><b>Readings.</b> Energy is the most universal and most comparable category — nearly every hospital buys from the same national suppliers, yet per-bed cost varies several-fold, a spread that heating degree-days and building age only partly explain; it is the single most promising target for pooled procurement. Αττικόν tops <em>every</em> outsourced-service category — it has externalized cleaning, catering and security at a scale no other hospital matches, spending ~€18k/bed/yr on the three combined; whether that buys better service than Ευαγγελισμός's €427/bed cleaning line is exactly the operational-efficiency question these data cannot answer but an inspectorate could. <b>Caution:</b> a low or missing value here can mean in-house provision, a differently-named local supplier our matcher missed (Rhodes' energy is a documented miss), or spend routed through the anonymous ΧΕ layer — absence from this table is not evidence of savings.</p>
 
 <h3>Nationwide suppliers — who sells to the whole system</h3>
@@ -219,6 +232,23 @@ fetch('hospitals.json').then(r=>r.json()).then(data=>{
     th.style.cursor='pointer';
     th.onclick=()=>{const k=th.dataset.k;
       cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;view();};
+  });
+});
+fetch('hospitals.json').then(r=>r.json()).then(data=>{
+  const cats=['energy_pb','cleaning_facility_pb','catering_pb','security_pb'];
+  const rowsAll=data.filter(h=>h.epb&&cats.some(c=>(h[c]||0)>=100));
+  const max={};cats.forEach(c=>max[c]=Math.max(...rowsAll.map(h=>h[c]||0)));
+  const cell=(v,c)=>v&&v>=100?`<td class="r"><div style="display:inline-block;background:#bcd4e6;height:.7em;width:${(v/max[c]*70).toFixed(0)}px;margin-right:4px"></div>${v.toLocaleString()}</td>`:'<td class="r">—</td>';
+  const tb=document.querySelector('#ctab tbody');
+  const render=rows=>{tb.innerHTML=rows.map(h=>
+    `<tr><td>${h.name}</td>${cats.map(c=>cell(h[c],c)).join('')}</tr>`).join('');};
+  let cur={k:'energy_pb',asc:false};
+  const view=()=>{render([...rowsAll].sort((a,b)=>{const x=a[cur.k]||0,y=b[cur.k]||0;
+    return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);}));};
+  view();
+  document.querySelectorAll('#ctab th').forEach(th=>{
+    th.style.cursor='pointer';
+    th.onclick=()=>{const k=th.dataset.k;cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;view();};
   });
 });
 fetch('suppliers.json').then(r=>r.json()).then(data=>{
