@@ -16,8 +16,8 @@ against source PDFs, Lamia verified clean. Extraction 2026-08-11.
 | 1 | ×100 amount errors (16 rec., €47.0M phantom) | Rhodes | **CONFIRMED** vs PDFs | Integrity failure, error not fraud — but shows nobody reconciles published data | fixed in our dataset; institutional fix pending |
 | 2 | ΑΦΜ typed into amount (2 rec., €895M phantom) | Rhodes | **CONFIRMED** | same | same |
 | 3 | Payee field empty on 2,503 records | Rhodes | **CONFIRMED** (payee *is* in PDFs) | Machine-readability failure; defeats automated oversight, whether or not intended | bulk PDF extraction |
-| 4 | Per-destination near-ceiling structuring: 3 suppliers, 45–71% of their revenue in band 10% under €30k net; ~€2.3M | Rhodes | **INDICATOR** (unverified) | **Highest-priority fraud-risk signal in this assessment** | pull the ~50 award decisions behind these payments |
-| 5 | Eponymous supplier ΤΕΧΝΙΚΗ ΥΠΟΣΤΗΡΙΞΗ ΝΟΣ. ΡΟΔΟΥ: €2.15M, 28× at €28,200 net, rising yearly, 46% of its payments uncoded | Rhodes | **INDICATOR** | Overlaps #4; ownership + original award unknown | ΓΕΜΗ ownership lookup + award PDF |
+| 4 | Per-destination near-ceiling structuring: 3 suppliers, 45–71% of their revenue in band 10% under €30k net; ~€2.3M | Rhodes | **RESOLVED — award docs read 2026-08-15 (§5)** | Structuring hypothesis **rejected** for all 3: near-ceiling payments are monthly instalments of tendered contracts. Residual risk relocated: MYSERVICES sole-bidder pattern | — |
+| 5 | Eponymous supplier ΤΕΧΝΙΚΗ ΥΠΟΣΤΗΡΙΞΗ ΝΟΣ. ΡΟΔΟΥ: €2.15M, 28× at €28,200 net, rising yearly, 46% of its payments uncoded | Rhodes | **RESOLVED (§5)** | Eponymy dissolved: ERP vendor label (code 2184) for the ΚΑΡΑΝΤΩΝΗΣ–ΠΑΠΑΔΟΥΛΗΣ consortium; electromechanical maintenance under tender 31/2024, contract 1042/2024 (8/2024–7/2026) | optional: verify tender 31/2024 bid count in ΚΗΜΔΗΣ |
 | 6 | Single-bid direct awards on high-cost drugs (3 of 5 sampled) | Rhodes | **INDICATOR** (n=5) | Plausibly structural (sole distributors); unmeasured baseline | full Β.2.1 PDF pass; compare Lamia |
 | 7 | Supplier name fragmentation (MYSERVICES under 5 names) | Rhodes | CONFIRMED pattern | Defeats name-based monitoring; ΑΦΜ-level dedup required (done here) | — |
 | 8 | 2026 regression: 99% of spend uncoded (was 14%) | Rhodes | **CONFIRMED, ONGOING** | Whatever workflow changed this year, category oversight is now blind | ask the hospital; monitor |
@@ -83,6 +83,41 @@ in other codes; the direction (island fuel premium) is real, the magnitude isn't
   *account* differently. Category-level per-bed comparisons between Greek hospitals are
   only meaningful after correcting for field-population differences — which is itself a
   finding for anyone attempting national benchmarking.
+
+## 5. Award-document verification (2026-08-15) — flags #4/#5 resolved
+
+22,199 Δ-category decisions pulled (5yr); 296 matched; 54 priority PDFs read
+(`data/99221940/award_pdfs/`, worklist `award_pdfs_priority.csv`). Verdict per supplier:
+
+**ΑΦΟΙ ΚΟΜΠΑΤΣΙΑΡΗ (catering, €1.46M) — CLOSED.** Open electronic tender *above* EU
+thresholds, lowest-price criterion, signed contract 65/2024; the €527k option year was
+exercised by formal board decision (631Ω46907Κ-ΦΔ2), and the decision records that the
+tender file and contract passed external audit. Near-ceiling payments = monthly instalments.
+
+**ΤΕΧΝΙΚΗ ΥΠΟΣΤΗΡΙΞΗ ΝΟΣ. ΡΟΔΟΥ (€2.15M) — CLOSED as eponymy/structuring; reframed.**
+Not a company: the hospital ERP's vendor label for the ΚΑΡΑΝΤΩΝΗΣ–ΠΑΠΑΔΟΥΛΗΣ consortium
+(Αγίων Αναργύρων 76, Ρόδος), providing electromechanical maintenance. Warrants reference
+tender file 31/2024 and contract 1042/2024 (1/8/2024–31/7/2026), preceded by contracts
+ΧΕ 1263/21 and ΧΕ 1557/2023 with option-year extensions — a procurement chain, not serial
+direct awards. Residual note: same incumbent continuously since ≥2021; competitiveness of
+the underlying tenders (bid counts) not yet verified.
+
+**MYSERVICES (3 ΑΦΜs, €1.9M) — flag TRANSFORMED, not closed.** Procedures exist but
+competition repeatedly fails: the 27/2020 international open tender (ΕΣΗΔΗΣ 90095)
+was derailed by pre-judicial appeals (ISS et al.) and cancelled; the fallback simplified
+tender 91/2021 drew **exactly one bid — MY SERVICES — which won**; the 2026 laundry
+tender 784/2026 again shows a **sole bidder — MYSERVICES — which won** (Ψ2Ω846907Κ-ΗΕ9).
+The 67/2024 cleaning tender had multiple bidders but all offers were rejected at a stage;
+91/2025 re-ran. So the correct finding is not threshold structuring but **persistent
+single-bidder outcomes on an island market while above-threshold tenders stall** —
+combined with the supplier's 3-ΑΦΜ fragmentation, this stays a monitoring item: compare
+its unit prices against Λαμία's UNISON contract and check ΕΣΗΔΗΣ bid histories.
+
+**Net effect on the overall assessment:** the "weak records + threshold-adjacent recurring
+spend" combination flagged in §1 is downgraded — the recurring spend is contracted and
+tendered. What remains is a *market-thinness* risk (one credible bidder for services on
+Rhodes), which is a procurement-policy problem, not an integrity indicator against the
+hospital.
 
 ## 4. Priority actions (cheapest decisive evidence first)
 
