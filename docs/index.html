@@ -125,7 +125,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <div class="part"><span>Part IV</span><h2>The hospitals, one by one</h2></div>
 
 <section>
-<p>Every hospital in the study, with its verified 5-year supplier spend (corrected, quarantine-filtered), data-quality score, spending trend and supplier concentration. Click any column header to sort.</p>
+<p>Every hospital in the study, with its verified 5-year supplier spend (corrected, quarantine-filtered), data-quality score, spending trend and supplier concentration. Click any column header to sort — and <b>compare only within a peer group</b>: a 109-bed island hospital and an 826-bed Athens tertiary are different animals.</p>
+<p><select id="gsel" style="font-size:1rem;padding:.3rem .5rem">
+<option value="all">All hospitals (50)</option>
+<option value="large">Large &amp; university, ≥440 beds (13)</option>
+<option value="medium">Medium general, 200–439 beds (20)</option>
+<option value="small">Small general, &lt;200 beds (10)</option>
+<option value="specialty">Specialty: pediatric / oncology / maternity / thoracic (7)</option>
+</select></p>
 <div style="overflow-x:auto">
 <table id="htab">
 <thead><tr>
@@ -134,7 +141,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <th class="r" data-k="ddqi">DDQI</th>
 <th class="r" data-k="y25">2025 (€M)</th>
 <th class="r" data-k="growth">Growth 22→25</th>
-<th class="r" data-k="top_supplier_share">Top-supplier share</th>
+<th class="r" data-k="top5_share">Top-5 supplier share</th>
 <th class="r" data-k="beds">Beds (2024)</th>
 <th class="r" data-k="epb">€/bed/year (2024)</th>
 <th class="r" data-k="epd">€/patient-day</th>
@@ -148,12 +155,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p><b>Scale.</b> Three Athens hospitals dominate: Ευαγγελισμός (€866M over five years), Αττικόν (€575M) and Λαϊκό (€530M). The top ten account for roughly €4.4bn — over half of all verified spend in the study.</p>
 <p><b>Size does not buy quality.</b> The correlation between spending volume and DDQI is weak: the largest spender ranks mid-table on data quality (58.7), and the best publishers are mid-sized regional hospitals (Μυτιλήνη 99.1, Χαλκίδα 97.4, Κομοτηνή 97.2). Eight hospitals — including Αττικόν, Νίκαια and Χανιά — publish effectively <em>zero</em> budget codes, so what their money buys cannot be machine-read at all.</p>
 <p><b>Divergent trajectories.</b> Between 2022 and 2025, the children's hospital Αγλαΐα Κυριακού grew +152% (from a small base, €3.4M→€8.5M) while Ιπποκράτειο Αθηνών fell −55% and Λαϊκό −20%. Some of this is real (post-COVID normalization, EKAPY centralization shifting purchases off hospital budgets); some may be recording changes. These are exactly the cases where the reconciliation method of Part III should be applied next.</p>
-<p><b>Concentration.</b> Most hospitals' largest supplier takes 3–7% of their spend — healthy dispersion. The outlier is Σωτηρία (thoracic diseases), where a single supplier accounts for 26.8%: plausibly structural for a specialty hospital dependent on specific pharmaceuticals, but the kind of number that deserves an award-document look before anyone calls it fine.</p>
+<p><b>Concentration.</b> We measure it as the top-5 suppliers' share of spend (CR5) — more robust than a single-supplier share, which one big contract can distort. The median hospital gives its five largest suppliers 23% of its money; the range runs from 13.4% (Γ. Παπανικολάου) to 49.8% (Παίδων Αγλαΐα Κυριακού, where five vendors take half). Small and specialty hospitals concentrate naturally — fewer, narrower needs. The cases worth an award-document look are those combining high CR5 with a dominant single supplier: Σωτηρία (CR5 40.7%, one supplier alone at 26.8%) and Κουτλιμπάνειο Λάρισας (40.3% / 28.2%).</p>
 
 <h3>Per-bed comparables (official 2024 bed &amp; activity data)</h3>
 <p>Joining our verified 2024 spend with the Ministry of Health's official 2024 dataset of developed beds and patient days (<a href="https://www.moh.gov.gr/articles/bihealth/stoixeia-noshleytikhs-kinhshs/13199-klines-noshleythentes-hmeres-noshleias-2024">moh.gov.gr</a>) gives, for the first time, like-for-like supplier spend per bed per year across 45 hospitals (5 excluded for incomplete 2024 posting — comparing an incomplete ledger per bed produces nonsense like €205/bed, so we don't).</p>
 <p>The spread is <b>16× — from €255,915 per bed per year (Λαϊκό) to €15,985 (Παίδων Αγλαΐα Κυριακού), median €62,268</b>. Most of it is case-mix, not efficiency: the top of the table is transplant/oncology medicine (Λαϊκό's expensive hemophilia and transplant drugs, Αγ. Σάββας and Θεαγένειο oncology, Αττικόν tertiary care), the bottom is maternity (Έλενα €25,672) and pediatrics, where drugs are cheap. Per patient-day the median is €301, with Λαϊκό again top at €768.</p>
-<p>The honest use of these numbers is <em>within-peer-group</em> comparison: general regional hospitals of similar size clustering between €34k (Κατερίνη) and €62k per bed invite a real question — is Κέρκυρα's €30k thrift, case-mix, or the off-ledger spending its last-place DDQI hints at? A low €/bed can mean an efficient hospital or an incompletely published one, and only the reconciliation method of Part III distinguishes the two. That ambiguity is itself an argument for making hospitals publish completely.</p>
+<p>The honest use of these numbers is <em>within-peer-group</em> comparison (use the filter above). The group benchmarks: <b>large &amp; university hospitals: median €119,782/bed/yr</b> (range €73k Νίκαια – €256k Λαϊκό); <b>medium general: €49,512</b> (€30k Κέρκυρα – €104k); <b>small general: €56,612</b> (€38k Έδεσσα – €74k Γιαννιτσά); <b>specialty: €78,372</b>, with the widest spread because oncology and pediatrics are opposite cost worlds. Within the medium group the real question emerges: is Κέρκυρα's €30k — 40% below its peer median — thrift, case-mix, or the off-ledger spending its last-place DDQI hints at? A low €/bed can mean an efficient hospital or an incompletely published one, and only the reconciliation method of Part III distinguishes the two. That ambiguity is itself an argument for complete publication.</p>
 
 <h3>Nationwide suppliers — who sells to the whole system</h3>
 <p>Aggregating all 50 hospitals' verified payments by supplier tax ID (state counterparties like ΕΦΚΑ excluded — €331M of ministry/fund remittances were masquerading as "supplier" spend) maps the national hospital market: <b>10,535 distinct suppliers, €7.45bn</b>. Sortable top-100 below.</p>
@@ -184,17 +191,20 @@ fetch('hospitals.json').then(r=>r.json()).then(data=>{
   const tb=document.querySelector('#htab tbody');
   const fm=n=>n==null?'—':(n/1e6).toFixed(1);
   const render=rows=>{tb.innerHTML=rows.map(h=>
-    `<tr><td>${h.name}</td><td class="r">${fm(h.total5)}</td><td class="r">${h.ddqi.toFixed(1)}</td><td class="r">${fm(h.y25)}</td><td class="r">${h.growth==null?'—':(h.growth>0?'+':'')+h.growth.toFixed(0)+'%'}</td><td class="r">${h.top_supplier_share.toFixed(1)}%</td><td class="r">${h.beds??'—'}</td><td class="r">${h.epb?h.epb.toLocaleString():'—'}</td><td class="r">${h.epd?Math.round(h.epd):'—'}</td></tr>`).join('');};
+    `<tr><td>${h.name}</td><td class="r">${fm(h.total5)}</td><td class="r">${h.ddqi.toFixed(1)}</td><td class="r">${fm(h.y25)}</td><td class="r">${h.growth==null?'—':(h.growth>0?'+':'')+h.growth.toFixed(0)+'%'}</td><td class="r">${(h.top5_share??0).toFixed(1)}%</td><td class="r">${h.beds??'—'}</td><td class="r">${h.epb?h.epb.toLocaleString():'—'}</td><td class="r">${h.epd?Math.round(h.epd):'—'}</td></tr>`).join('');};
   let cur={k:'total5',asc:false};
-  render(data);
+  const sel=document.getElementById('gsel');
+  const view=()=>{
+    let rows=sel.value==='all'?[...data]:data.filter(h=>h.group===sel.value);
+    rows.sort((a,b)=>{const x=a[cur.k],y=b[cur.k];
+      if(x==null)return 1;if(y==null)return -1;
+      return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);});
+    render(rows);};
+  sel.onchange=view; view();
   document.querySelectorAll('#htab th').forEach(th=>{
     th.style.cursor='pointer';
     th.onclick=()=>{const k=th.dataset.k;
-      cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;
-      const s=[...data].sort((a,b)=>{const x=a[k],y=b[k];
-        if(x==null)return 1;if(y==null)return -1;
-        return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);});
-      render(s);};
+      cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;view();};
   });
 });
 fetch('suppliers.json').then(r=>r.json()).then(data=>{
