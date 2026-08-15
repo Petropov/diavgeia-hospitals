@@ -81,3 +81,23 @@ exactly the institutional failure we documented at Rhodes. Errors were found onl
 someone thought to look; everywhere else, absence of evidence quietly became evidence of
 absence. The only structural fix — for us and for the ministry — is *randomized*
 verification against source documents, not outlier-chasing.
+
+## 6. The Crete gap — structural payment-layer silence (probed 2026-08-15)
+
+The national dataset's largest known omission is not an error but a publishing choice.
+Both Heraklion hospitals — ΠΑΓΝΗ (99222010, Crete's largest) and Βενιζέλειο (99221997),
+which operate under a joint administration — publish **zero payment-execution records**
+(Β.2.2 and Β.2.1 both = 0), while remaining otherwise highly active on Diavgeia. ΠΑΓΝΗ in
+5 recent months: 3,732 decisions, of which 1,450 award decisions (Δ.2.2) and 439 budget
+commitments (Β.1.3, including single entries of €11.8M) — procurement fully visible, money
+out completely dark. Other Cretan hospitals (e.g. Χανιά) do publish Β.2.2, so this is an
+institutional practice of the two linked Heraklion hospitals, not a regional or platform
+rule.
+
+Consequences: (a) our €7.80B national Β.2.2 total structurally understates Greece — likely
+by hundreds of millions over 5yr given ΠΑΓΝΗ's size; (b) DDQI cannot even be computed for
+them — silence outranks bad data in evading measurement, the extreme case of the §2
+detection asymmetry; (c) partial recovery is possible: Βενιζέλειο's Β.1.3 subjects embed
+supplier name, ΑΦΜ and contract amount, so a commitment-layer reconstruction is feasible
+if ever needed. For any national publication, ΠΑΓΝΗ/Βενιζέλειο must be listed as
+"non-reporting at the payment layer", not silently absent.
