@@ -58,6 +58,18 @@ produce confident wrong answers:**
 - **Corrected national Β.2.2 5-yr total: €7,798,880,002** (clean €7,783,310,466 +
   €15,569,536 document-verified add-back).
 
+## B2. Β.2.1 layer screen (added 2026-08-15, same day)
+
+All 50 hospitals' Β.2.1 (ΧΕ) records screened: 38,567 records, €266.6M nominal. 10 suspects
+(≥€5M, or whole-euro ≥€500k at >200× the org's median); all 10 source PDFs verified
+(`b21_verdicts.csv`): **3 genuine** (€2.66M, Παπαγεωργίου ×2 + 99221891), **6 ×100 errors**
+(Ιωάννινα-Χατζηκώστα ×3, ΕΛΠΙΣ, 99221887, Γεννηματάς — nominal €9.5M, true €101k), and
+**1 new error-class variant: supplier PRODUCT CODE in the amount field** (ΚΩΔ.013510364
+published as €13,510,364; true purchase €1,488). Phantom value removed: €22.7M (8.5% of the
+layer). **Corrected national Β.2.1 5-yr total: €243,872,597.** Per-bed and all-value
+figures no longer carry the unscreened-Β.2.1 asterisk (overstatement side; understatement
+bounded by §A).
+
 ## C. What this buys the project
 Every caveat in `Known_Unknowns.md` about undetected error now has a number: published
 amounts are right ~98% of the time (CI 96.4–99.6%), wrong records are value-neutral except
