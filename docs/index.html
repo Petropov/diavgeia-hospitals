@@ -135,7 +135,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <th class="r" data-k="y25">2025 (€M)</th>
 <th class="r" data-k="growth">Growth 22→25</th>
 <th class="r" data-k="top_supplier_share">Top-supplier share</th>
-<th class="r" data-k="n">Records</th>
+<th class="r" data-k="beds">Beds (2024)</th>
+<th class="r" data-k="epb">€/bed/year (2024)</th>
+<th class="r" data-k="epd">€/patient-day</th>
 </tr></thead>
 <tbody></tbody>
 </table>
@@ -147,6 +149,26 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p><b>Size does not buy quality.</b> The correlation between spending volume and DDQI is weak: the largest spender ranks mid-table on data quality (58.7), and the best publishers are mid-sized regional hospitals (Μυτιλήνη 99.1, Χαλκίδα 97.4, Κομοτηνή 97.2). Eight hospitals — including Αττικόν, Νίκαια and Χανιά — publish effectively <em>zero</em> budget codes, so what their money buys cannot be machine-read at all.</p>
 <p><b>Divergent trajectories.</b> Between 2022 and 2025, the children's hospital Αγλαΐα Κυριακού grew +152% (from a small base, €3.4M→€8.5M) while Ιπποκράτειο Αθηνών fell −55% and Λαϊκό −20%. Some of this is real (post-COVID normalization, EKAPY centralization shifting purchases off hospital budgets); some may be recording changes. These are exactly the cases where the reconciliation method of Part III should be applied next.</p>
 <p><b>Concentration.</b> Most hospitals' largest supplier takes 3–7% of their spend — healthy dispersion. The outlier is Σωτηρία (thoracic diseases), where a single supplier accounts for 26.8%: plausibly structural for a specialty hospital dependent on specific pharmaceuticals, but the kind of number that deserves an award-document look before anyone calls it fine.</p>
+
+<h3>Per-bed comparables (official 2024 bed &amp; activity data)</h3>
+<p>Joining our verified 2024 spend with the Ministry of Health's official 2024 dataset of developed beds and patient days (<a href="https://www.moh.gov.gr/articles/bihealth/stoixeia-noshleytikhs-kinhshs/13199-klines-noshleythentes-hmeres-noshleias-2024">moh.gov.gr</a>) gives, for the first time, like-for-like supplier spend per bed per year across 45 hospitals (5 excluded for incomplete 2024 posting — comparing an incomplete ledger per bed produces nonsense like €205/bed, so we don't).</p>
+<p>The spread is <b>16× — from €255,915 per bed per year (Λαϊκό) to €15,985 (Παίδων Αγλαΐα Κυριακού), median €62,268</b>. Most of it is case-mix, not efficiency: the top of the table is transplant/oncology medicine (Λαϊκό's expensive hemophilia and transplant drugs, Αγ. Σάββας and Θεαγένειο oncology, Αττικόν tertiary care), the bottom is maternity (Έλενα €25,672) and pediatrics, where drugs are cheap. Per patient-day the median is €301, with Λαϊκό again top at €768.</p>
+<p>The honest use of these numbers is <em>within-peer-group</em> comparison: general regional hospitals of similar size clustering between €34k (Κατερίνη) and €62k per bed invite a real question — is Κέρκυρα's €30k thrift, case-mix, or the off-ledger spending its last-place DDQI hints at? A low €/bed can mean an efficient hospital or an incompletely published one, and only the reconciliation method of Part III distinguishes the two. That ambiguity is itself an argument for making hospitals publish completely.</p>
+
+<h3>Nationwide suppliers — who sells to the whole system</h3>
+<p>Aggregating all 50 hospitals' verified payments by supplier tax ID (state counterparties like ΕΦΚΑ excluded — €331M of ministry/fund remittances were masquerading as "supplier" spend) maps the national hospital market: <b>10,535 distinct suppliers, €7.45bn</b>. Sortable top-100 below.</p>
+<div style="overflow-x:auto">
+<table id="stab">
+<thead><tr>
+<th data-k="name">Supplier</th>
+<th class="r" data-k="value">5-yr value (€M)</th>
+<th class="r" data-k="hospitals">Hospitals served</th>
+<th class="r" data-k="payments">Payments</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
+<p><b>What it shows.</b> The single largest payee of the hospital system is not a pharmaceutical company but <b>ΔΕΗ — electricity, €228M across 49 hospitals</b>. Then comes big pharma (MSD €219M, Roche €180M+€96M diagnostics, Pfizer €121M, Gilead €101M) and medical devices (Medtronic €135M). <b>43 suppliers sell to all 50 hospitals</b> — a genuinely national vendor layer; the widest-footprint domestic firm is a medical-devices company at €173M over 10,334 separate payments. Yet the top-10 suppliers hold only 20% of total value: nationally the market is dispersed, which makes the <em>local</em> single-bidder pockets documented in Part III stand out — competition exists in Greece; it fails to show up in specific places.</p>
 </section>
 
 <section>
@@ -162,7 +184,7 @@ fetch('hospitals.json').then(r=>r.json()).then(data=>{
   const tb=document.querySelector('#htab tbody');
   const fm=n=>n==null?'—':(n/1e6).toFixed(1);
   const render=rows=>{tb.innerHTML=rows.map(h=>
-    `<tr><td>${h.name}</td><td class="r">${fm(h.total5)}</td><td class="r">${h.ddqi.toFixed(1)}</td><td class="r">${fm(h.y25)}</td><td class="r">${h.growth==null?'—':(h.growth>0?'+':'')+h.growth.toFixed(0)+'%'}</td><td class="r">${h.top_supplier_share.toFixed(1)}%</td><td class="r">${h.n.toLocaleString()}</td></tr>`).join('');};
+    `<tr><td>${h.name}</td><td class="r">${fm(h.total5)}</td><td class="r">${h.ddqi.toFixed(1)}</td><td class="r">${fm(h.y25)}</td><td class="r">${h.growth==null?'—':(h.growth>0?'+':'')+h.growth.toFixed(0)+'%'}</td><td class="r">${h.top_supplier_share.toFixed(1)}%</td><td class="r">${h.beds??'—'}</td><td class="r">${h.epb?h.epb.toLocaleString():'—'}</td><td class="r">${h.epd?Math.round(h.epd):'—'}</td></tr>`).join('');};
   let cur={k:'total5',asc:false};
   render(data);
   document.querySelectorAll('#htab th').forEach(th=>{
@@ -173,6 +195,20 @@ fetch('hospitals.json').then(r=>r.json()).then(data=>{
         if(x==null)return 1;if(y==null)return -1;
         return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);});
       render(s);};
+  });
+});
+fetch('suppliers.json').then(r=>r.json()).then(data=>{
+  const tb=document.querySelector('#stab tbody');
+  const render=rows=>{tb.innerHTML=rows.map(s=>
+    `<tr><td>${s.name}</td><td class="r">${(s.value/1e6).toFixed(1)}</td><td class="r">${s.hospitals}</td><td class="r">${s.payments.toLocaleString()}</td></tr>`).join('');};
+  let cur={k:'value',asc:false};
+  render(data.slice(0,30));
+  document.querySelectorAll('#stab th').forEach(th=>{
+    th.style.cursor='pointer';
+    th.onclick=()=>{const k=th.dataset.k;
+      cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;
+      render([...data].sort((a,b)=>{const x=a[k],y=b[k];
+        return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);}).slice(0,30));};
   });
 });
 </script>
