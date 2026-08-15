@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greek Public Hospital Payments — a Diavgeia Transparency Audit</title>
+<meta name="description" content="Five years of payment records from 50 Greek public hospitals, verified against 500+ source documents: the national picture, the quality of Diavgeia's data, and the key findings.">
+<style>
+:root{--ink:#1a1d23;--muted:#5b6472;--accent:#0f5c8c;--bg:#fafaf8;--card:#fff;--line:#e5e3dd;--warn:#a33}
+*{box-sizing:border-box;margin:0}
+body{font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg)}
+header{background:#12354d;color:#fff;padding:3.5rem 1.5rem 3rem}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+h1{font-size:2rem;line-height:1.25;font-weight:700;max-width:760px}
+.sub{color:#b8cfe0;margin-top:.8rem;font-size:1.05rem;max-width:700px}
+.lang{float:right;font-family:system-ui,sans-serif;font-size:.9rem}
+.lang a{color:#fff;text-decoration:none;border:1px solid #ffffff66;padding:.25rem .7rem;border-radius:4px}
+.stats{display:flex;flex-wrap:wrap;gap:1rem;margin:2rem auto 0;max-width:860px}
+.stat{background:#ffffff14;border:1px solid #ffffff2b;border-radius:8px;padding:.9rem 1.2rem;flex:1 1 160px}
+.stat b{display:block;font-size:1.5rem;font-family:system-ui,sans-serif}
+.stat span{font-size:.85rem;color:#b8cfe0;font-family:system-ui,sans-serif}
+main{padding:2.5rem 0 4rem}
+section{margin:2.6rem auto;max-width:860px;padding:0 1rem}
+.part{max-width:860px;margin:3.2rem auto 0;padding:0 1rem}
+.part span{display:block;font-family:system-ui,sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.part h2{font-size:1.7rem;color:var(--ink);border-bottom:3px solid var(--accent);padding-bottom:.4rem;margin-top:.3rem}
+h3{font-size:1.2rem;color:var(--accent);margin:1.6rem 0 .6rem}
+p{margin:.8rem 0}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-family:system-ui,sans-serif;font-size:.92rem;background:var(--card)}
+th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left}
+th{background:#f0efe9}
+td.r,th.r{text-align:right}
+.note{background:#fdf6e3;border-left:4px solid #c9a227;padding:.8rem 1rem;font-size:.95rem;margin:1.2rem 0}
+.good{color:#1d6b34}.bad{color:var(--warn)}
+a{color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+.small{font-size:.9rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="lang"><a href="gr.html">Ελληνικά</a></div>
+    <h1>Greek public hospital payments, checked against the documents</h1>
+    <p class="sub">An independent audit of the payment records 50 Greek public hospitals publish on Diavgeia, the state transparency platform. Three questions: what does the money look like, can the platform's data be trusted, and what does it reveal?</p>
+    <div class="stats">
+      <div class="stat"><b>€7.80&thinsp;bn</b><span>verified supplier payments, 2021–2026</span></div>
+      <div class="stat"><b>50</b><span>hospitals, ranked by data quality</span></div>
+      <div class="stat"><b>500+</b><span>source PDFs checked by hand &amp; machine</span></div>
+      <div class="stat"><b>2.00%</b><span>measured record error rate (95% CI 0.4–3.6%)</span></div>
+    </div>
+  </div>
+</header>
+<main>
+
+<div class="part"><span>Part I</span><h2>The overarching picture</h2></div>
+
+<section>
+<p>Greece requires every public body to publish its spending decisions on <a href="https://diavgeia.gov.gr">Diavgeia</a>. For hospitals that means, in principle, a public record of every payment order: who was paid, how much, and for what. We downloaded five years of these records (August 2021 – August 2026) from the 50 largest hospital publishers, classified hundreds of thousands of decisions, and — the step usually skipped — verified them against the scanned source documents.</p>
+<h3>The money</h3>
+<p>After corrections, the 50 hospitals paid <b>€7.80 billion</b> to third-party suppliers over five years through the main payment-order layer, growing steadily from <b>€1.36bn (2022)</b> to <b>€1.68bn (2025)</b> — about +24%, with no cliff or spike that would suggest a reporting-regime change. A further €244M flows through a second, structurally anonymous instrument (ΧΕ warrants). Pharmaceuticals and medical supplies dominate; the largest single verified payment is €6.58M for pharmaceuticals.</p>
+<h3>How complete is this picture?</h3>
+<p>For the hospital we reconciled line-by-line against its audited annual accounts, Diavgeia's payment layer captured <b>~91% of all third-party spending value</b> — in both years tested. The missing ~9% is identifiable (the anonymous warrant layer), not lost. Diavgeia is, in short, a genuinely usable public ledger of hospital spending — with the reliability caveats that Part II measures.</p>
+<h3>How we know any of this</h3>
+<p>Every claim traces to a document: a stratified random audit of 300 payment records against their scanned warrants, verification of all 55 published payments over €5M, 22,199 procurement decisions pulled to resolve flagged patterns, and reconciliation against hospitals' own απολογισμός. All data, scripts, and verification PDFs are in the <a href="https://github.com/Petropov/diavgeia-hospitals">public repository</a>.</p>
+</section>
+
+<div class="part"><span>Part II</span><h2>The quality of Diavgeia</h2></div>
+
+<section>
+<h3>The data is 98% right…</h3>
+<p>In the 300-record random audit, 294 records matched their source documents exactly: a <b>2.00% error rate</b> (95% CI 0.42–3.58%). Four of the six errors <em>understated</em> the real payment — the first direct measurement of an error class no automated screen can catch, because every screen hunts for numbers that are too big, never too small. The six errors net out to just +€250, so ordinary typos barely distort totals.</p>
+<h3>…but the errors that slip through are spectacular</h3>
+<p>We quarantined every published payment over €5 million: 55 records with a combined face value of <b>€129 trillion</b> — roughly 700 times Greek GDP. After checking each source document, exactly <b>one</b> was real. The rest decompose into five recurring failure modes:</p>
+<table>
+<tr><th>Error class</th><th>What happens</th><th>Documented example</th></tr>
+<tr><td>×100 missing decimals</td><td>€2,351.91 typed without the decimal</td><td>A €2.35M pharma invoice published as €235M at Greece's largest hospital</td></tr>
+<tr><td>Tax ID in the amount field</td><td>The supplier's 9-digit ΑΦΜ becomes the payment</td><td>A €94,472,918 "payment" that is digit-for-digit the supplier's tax number</td></tr>
+<tr><td>Budget code in the amount field</td><td>14-digit accounting codes published as euros</td><td>€24 trillion records; the true amount often survives in the swapped field</td></tr>
+<tr><td>Product code in the amount field</td><td>Catalogue numbers published as euros</td><td>A €13,510,364 record; the document shows a €1,488 purchase of 5 chest drains</td></tr>
+<tr><td>Batch-payroll giants</td><td>One record aggregates hundreds of salaries</td><td>A single €172M record covering "…and 148 others"</td></tr>
+</table>
+<p>Some stood uncorrected for years. A platform that cannot notice a €94 million accident cannot notice a €50,000 deliberate act — that asymmetry, not any individual typo, is the structural weakness.</p>
+<h3>Hospitals differ enormously in how well they publish</h3>
+<p>We scored every hospital on a 0–100 Data Quality Index (DDQI: payee completion, budget-code completion, amount integrity, name consistency, recency). Identical legal obligations, identical platform — and a 62-point gap:</p>
+<table>
+<tr><th>#</th><th>Best publishers</th><th class="r">DDQI</th><th>#</th><th>Weakest publishers</th><th class="r">DDQI</th></tr>
+<tr><td>1</td><td>ΓΝ Μυτιλήνης «Βοστάνειο»</td><td class="r good">99.1</td><td>46</td><td>ΓΝ Έδεσσας</td><td class="r bad">50.9</td></tr>
+<tr><td>2</td><td>ΓΝ Χαλκίδας</td><td class="r good">97.4</td><td>47</td><td>ΓΝ «Άγιος Παύλος» Θεσ/νίκης</td><td class="r bad">49.1</td></tr>
+<tr><td>3</td><td>ΓΝ Κομοτηνής</td><td class="r good">97.2</td><td>48</td><td>ΓΝ Νίκαιας</td><td class="r bad">46.6</td></tr>
+<tr><td>4</td><td>ΓΝ «Άγιος Δημήτριος» Θεσ/νίκης</td><td class="r good">91.8</td><td>49</td><td>ΓΝ Χανίων</td><td class="r bad">45.5</td></tr>
+<tr><td>5</td><td>ΓΝ Σερρών</td><td class="r good">88.7</td><td>50</td><td>ΓΝ Κέρκυρας</td><td class="r bad">36.8</td></tr>
+</table>
+<p>The index predicts reality: in the random audit, the hospitals independently classified as clean produced zero errors in 120 documents; the known-worst produced the most. Several major hospitals publish <em>zero</em> budget codes, making machine oversight of what money was spent on impossible.</p>
+<h3>The loudest quality signal is silence</h3>
+<p>Crete's two largest hospitals — ΠΑΓΝΗ and Βενιζέλειο, under a joint administration — publish <b>no payment records at all</b>. In five recent months ΠΑΓΝΗ posted 3,732 decisions, including 1,450 procurement awards and commitments up to €11.8M — and zero payment orders. Procurement fully visible; money out, completely dark. Other Cretan hospitals publish normally: this is an institutional practice, not a technical one.</p>
+<p>It exposes a perverse incentive in transparency measurement: bad data lowers your score, but <em>no data exempts you from scoring entirely</em>. Any ranking that silently drops non-reporters rewards the most opaque institutions. Our totals list these hospitals explicitly as "non-reporting at the payment layer".</p>
+</section>
+
+<div class="part"><span>Part III</span><h2>Key findings</h2></div>
+
+<section>
+<h3>1. The structuring flags dissolved when the award documents were read</h3>
+<p>Payment patterns at one island hospital initially looked like textbook procurement structuring: three suppliers receiving repeated monthly payments just under the €30,000 direct-award ceiling. We read the award documents behind all three relationships. All three dissolved — each was a tendered, contracted service (catering, security/cleaning, electromechanical maintenance) invoiced monthly; one "supplier" was not even a company but the hospital ERP's label for a maintenance consortium's contract. Payment data alone would have convicted the innocent.</p>
+<h3>2. The real procurement risk is single-bidder capture, not threshold games</h3>
+<p>What the award documents revealed instead: on the island market, formally competitive tenders repeatedly attract <b>exactly one bidder</b> — and when larger open tenders are launched, competitor appeals stall them until the fallback procedure lands with the incumbent. A market-thinness problem, invisible in payment data, visible only in award documents.</p>
+<h3>3. Our corrections survive an external audit</h3>
+<p>For the hospital with the heaviest corrections, we reconciled a clean year and a ×100-contaminated year against its audited accounts:</p>
+<table>
+<tr><th>Year</th><th class="r">Official third-party payments</th><th class="r">Our corrected series</th><th class="r">Coverage</th></tr>
+<tr><td>2024 (clean)</td><td class="r">€21.5M</td><td class="r">€19.5M</td><td class="r">90.7%</td></tr>
+<tr><td>2023 (×100-contaminated)</td><td class="r">≈€19.1M</td><td class="r">€17.5M</td><td class="r">91.6%</td></tr>
+</table>
+<p>Identical ~91% coverage in both years — while the <em>uncorrected</em> 2023 series would exceed 100% of the official envelope, which is arithmetically impossible for a subset. The hospital's own audited accounts confirm the corrections. Category-level agreement: pharmaceuticals within 3–6%, cleaning exact, lab reagents within 1%.</p>
+<h3>4. Comparable hospitals cost the same — they just account differently</h3>
+<p>Two similar-sized hospitals we compared in depth (335 vs 318 beds) showed total payment value per bed within 1% of each other — while their published category breakdowns differed wildly, because one records budget codes on 99% of spend and the other, since 2026, on almost none. Cross-hospital benchmarking in Greece is possible, but only after correcting for how each hospital fills in the forms — which is itself a finding.</p>
+<h3>5. What should change</h3>
+<p><b>Validate at entry.</b> Every error class found is machine-detectable at submission: an amount equal to the payer's tax ID, a 14-digit euro value, a cents-less number 100× the invoice trail — none should be publishable.</p>
+<p><b>Score the publishers.</b> A public per-institution quality index turns invisible negligence into a visible ranking — and demonstrably predicts document-level accuracy.</p>
+<p><b>Close the silence loophole.</b> Payment-layer publication should be reconciled against each hospital's απολογισμός — automatable, as we showed — and non-reporting institutions should appear as such in every official statistic.</p>
+<p><b>Random audits, not outlier-chasing.</b> Targeted screens only ever found overstatements; the understatements surfaced exclusively in the random sample. Randomized document verification is the only method that measures what you are not looking for.</p>
+</section>
+
+<section>
+<h3>Method, limits, and reproducibility</h3>
+<p>Everything is reproducible from the <a href="https://github.com/Petropov/diavgeia-hospitals">public repository</a>: raw API responses, classified datasets, every verification PDF, all scripts, and a <a href="https://github.com/Petropov/diavgeia-hospitals/blob/main/SENSE_CHECK.md">sense-check log</a> recording our own retracted claims — including a false 37.67% "error rate" produced by our own parser before we caught it. Known limits: totals are corrected for overstatement, with understatement bounded only by the audit CI; the anonymous warrant layer resists supplier attribution by design; hospitals below the top-50 are covered at 12 months; and the two non-reporting hospitals make any "national" total a floor, not a census.</p>
+<p class="small">Per our <a href="https://github.com/Petropov/diavgeia-hospitals/blob/main/PUBLICATION_POLICY.md">publication policy</a>, suppliers are not named in findings; every underlying decision ID (ΑΔΑ) is public for independent verification.</p>
+<div class="note"><b>Right of reply.</b> The institutions discussed are invited to respond; responses will be published here verbatim. Contact: petropoul.vas@gmail.com.</div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <span>Independent research · data extracted 2026-08-15 · CC BY 4.0 for reports, source data © Diavgeia</span>
+    <span><a href="gr.html">Ελληνική έκδοση</a></span>
+  </div>
+</footer>
+</body>
+</html>
