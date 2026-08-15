@@ -122,6 +122,33 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p><b>Random audits, not outlier-chasing.</b> Targeted screens only ever found overstatements; the understatements surfaced exclusively in the random sample. Randomized document verification is the only method that measures what you are not looking for.</p>
 </section>
 
+<div class="part"><span>Part IV</span><h2>The hospitals, one by one</h2></div>
+
+<section>
+<p>Every hospital in the study, with its verified 5-year supplier spend (corrected, quarantine-filtered), data-quality score, spending trend and supplier concentration. Click any column header to sort.</p>
+<div style="overflow-x:auto">
+<table id="htab">
+<thead><tr>
+<th data-k="name">Hospital</th>
+<th class="r" data-k="total5">5-yr spend (€M)</th>
+<th class="r" data-k="ddqi">DDQI</th>
+<th class="r" data-k="y25">2025 (€M)</th>
+<th class="r" data-k="growth">Growth 22→25</th>
+<th class="r" data-k="top_supplier_share">Top-supplier share</th>
+<th class="r" data-k="n">Records</th>
+</tr></thead>
+<tbody></tbody>
+</table>
+</div>
+<p class="small">Growth compares full years 2022→2025. A caution learned the hard way: an apparent spending collapse can be a <em>publishing</em> collapse — one hospital's budget codes vanished from 99% of its records in 2026 without any real spending change. Trend figures are payment-record trends, verified only where stated.</p>
+
+<h3>What the table shows</h3>
+<p><b>Scale.</b> Three Athens hospitals dominate: Ευαγγελισμός (€866M over five years), Αττικόν (€575M) and Λαϊκό (€530M). The top ten account for roughly €4.4bn — over half of all verified spend in the study.</p>
+<p><b>Size does not buy quality.</b> The correlation between spending volume and DDQI is weak: the largest spender ranks mid-table on data quality (58.7), and the best publishers are mid-sized regional hospitals (Μυτιλήνη 99.1, Χαλκίδα 97.4, Κομοτηνή 97.2). Eight hospitals — including Αττικόν, Νίκαια and Χανιά — publish effectively <em>zero</em> budget codes, so what their money buys cannot be machine-read at all.</p>
+<p><b>Divergent trajectories.</b> Between 2022 and 2025, the children's hospital Αγλαΐα Κυριακού grew +152% (from a small base, €3.4M→€8.5M) while Ιπποκράτειο Αθηνών fell −55% and Λαϊκό −20%. Some of this is real (post-COVID normalization, EKAPY centralization shifting purchases off hospital budgets); some may be recording changes. These are exactly the cases where the reconciliation method of Part III should be applied next.</p>
+<p><b>Concentration.</b> Most hospitals' largest supplier takes 3–7% of their spend — healthy dispersion. The outlier is Σωτηρία (thoracic diseases), where a single supplier accounts for 26.8%: plausibly structural for a specialty hospital dependent on specific pharmaceuticals, but the kind of number that deserves an award-document look before anyone calls it fine.</p>
+</section>
+
 <section>
 <h3>Method, limits, and reproducibility</h3>
 <p>Everything is reproducible from the <a href="https://github.com/Petropov/diavgeia-hospitals">public repository</a>: raw API responses, classified datasets, every verification PDF, all scripts, and a <a href="https://github.com/Petropov/diavgeia-hospitals/blob/main/SENSE_CHECK.md">sense-check log</a> recording our own retracted claims — including a false 37.67% "error rate" produced by our own parser before we caught it. Known limits: totals are corrected for overstatement, with understatement bounded only by the audit CI; the anonymous warrant layer resists supplier attribution by design; hospitals below the top-50 are covered at 12 months; and the two non-reporting hospitals make any "national" total a floor, not a census.</p>
@@ -130,6 +157,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 </section>
 
 </main>
+<script>
+fetch('hospitals.json').then(r=>r.json()).then(data=>{
+  const tb=document.querySelector('#htab tbody');
+  const fm=n=>n==null?'—':(n/1e6).toFixed(1);
+  const render=rows=>{tb.innerHTML=rows.map(h=>
+    `<tr><td>${h.name}</td><td class="r">${fm(h.total5)}</td><td class="r">${h.ddqi.toFixed(1)}</td><td class="r">${fm(h.y25)}</td><td class="r">${h.growth==null?'—':(h.growth>0?'+':'')+h.growth.toFixed(0)+'%'}</td><td class="r">${h.top_supplier_share.toFixed(1)}%</td><td class="r">${h.n.toLocaleString()}</td></tr>`).join('');};
+  let cur={k:'total5',asc:false};
+  render(data);
+  document.querySelectorAll('#htab th').forEach(th=>{
+    th.style.cursor='pointer';
+    th.onclick=()=>{const k=th.dataset.k;
+      cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;
+      const s=[...data].sort((a,b)=>{const x=a[k],y=b[k];
+        if(x==null)return 1;if(y==null)return -1;
+        return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);});
+      render(s);};
+  });
+});
+</script>
 <footer>
   <div class="wrap">
     <span>Independent research · data extracted 2026-08-15 · CC BY 4.0 for reports, source data © Diavgeia</span>
