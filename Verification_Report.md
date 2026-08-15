@@ -70,6 +70,37 @@ layer). **Corrected national Β.2.1 5-yr total: €243,872,597.** Per-bed and al
 figures no longer carry the unscreened-Β.2.1 asterisk (overstatement side; understatement
 bounded by §A).
 
+## D. Απολογισμός reconciliation — the first test against a source outside Diavgeia's
+payment layer (2026-08-15)
+
+Rhodes publishes monthly budget-execution statements (ν.4305/2014) and annual απολογισμός
+approvals on Diavgeia itself (type Β.3, found by subject search — 40 docs in
+`data/99221940/reconciliation_pdfs/`).
+
+**FY2024 (clean year).** Official: warrants issued €26,256,744.24 (= paid). Per-KAE
+decomposition: payroll/social codes €4.76M + third-party €21.5M. Our supplier-classified
+Β.2.2: €19,504,514 = **90.7% of official third-party issuance**. Category-level fit where
+both sides are populated: pharmaceuticals 0.94–0.97, cleaning 1.00, lab reagents 0.99,
+professional fees 0.96, technical works 0.90 — and exact zeros on payroll codes (0219,
+0263, 0277), which we exclude by design. The ~9% shortfall is the structurally anonymous
+Β.2.1 ΧΕ layer plus partially-uncoded categories, not non-posting.
+
+**FY2023 (×100-contaminated year) — the corrections tested externally.** Official
+απολογισμός 2023: valid paid warrants €23,943,239.66 (issued €24.50M − €0.56M cancelled).
+Estimated third-party envelope (payroll share as in 2024): ≈€19.1M. Our **corrected**
+2023 series: €17.51M = **91.6% coverage — statistically identical to the clean year's
+90.7%**. Our **uncorrected** series (€19.79M) would exceed the third-party envelope
+(~103%) — impossible for a strict subset. The PDF-derived ×100 corrections are therefore
+confirmed by the hospital's own audited annual accounts, an entirely independent source.
+
+Omission bound: for Rhodes, Diavgeia's Β.2.2 layer captures ~91% of all third-party
+warrant value in both tested years; the remainder is identifiable (anonymous ΧΕ), not
+missing. Caveat: 2023 payroll share is estimated from 2024's proportions; parsing the
+Dec-2023 execution statement would remove the estimate.
+
+Housekeeping note: Rhodes' local Β.2.1 file only covers 2021–2023 (early partial pull;
+batch skipped it as non-empty) — refetch before any Β.2.1-based Rhodes claims.
+
 ## C. What this buys the project
 Every caveat in `Known_Unknowns.md` about undetected error now has a number: published
 amounts are right ~98% of the time (CI 96.4–99.6%), wrong records are value-neutral except
