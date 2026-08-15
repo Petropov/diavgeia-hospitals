@@ -60,7 +60,11 @@ uncoded spend (assumes uncoded distributes like coded — upper bound).
 | Security (CPV/name-matched) | 1,608 | — | 1,227 | **1.31** |
 | Fuel/energy | 1,445 | 1,829 | 199 | 9.2* |
 | **All Β.2.2** | **49,389** | — | **74,600** | 0.66 |
-| **All payment value (Β.2.2+Β.2.1, 5yr)** | **73,719** | — | **74,520** | **0.99** |
+| **All payment value (Β.2.2+Β.2.1, 5yr)** | **~73,700*** | — | **74,520** | **~0.97–0.99** |
+
+\* Rhodes' Β.2.1 amounts are unscreened for ×100 errors (≥1 proven: €2.56M → €25.5k), so
+this figure carries more uncertainty than the corrected Β.2.2 numbers. "Near-parity"
+holds; the second decimal does not. See `SENSE_CHECK.md`.
 
 \* fuel ratio overstated by coding differences — Lamia's natural gas and medical gases sit
 in other codes; the direction (island fuel premium) is real, the magnitude isn't clean.

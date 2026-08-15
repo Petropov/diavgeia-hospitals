@@ -1,0 +1,633 @@
+{
+ "generated_utc": "2026-08-13T08:10:44+00:00",
+ "git_commit": "2cbea49cab587f40819cbd2d79903a6cc683c7c1",
+ "source": {
+  "portal": "https://diavgeia.gov.gr",
+  "api": "https://diavgeia.gov.gr/opendata/search.json",
+  "record_url_template": "https://diavgeia.gov.gr/opendata/decisions/{ADA}.json",
+  "document_url_template": "https://diavgeia.gov.gr/doc/{ADA}",
+  "legal_basis": "N.3861/2010 (Programme Diavgeia) — public records",
+  "note": "LIVE system: totals drift between extractions as records are added or corrected. Every figure must be quoted with its extraction date. Re-fetch any ADA to verify independently."
+ },
+ "counts": {
+  "files": 113,
+  "csv_files": 24,
+  "pdf_files": 75,
+  "total_bytes": 16837601
+ },
+ "files": [
+  {
+   "path": "data/6166/candidates.json",
+   "bytes": 2436,
+   "sha256": "1deef95ecf6020d22fb9cc81de128a6cd47c0c7897401c9357e63d571662ff2c"
+  },
+  {
+   "path": "data/6166/decisions/901ΓΩΛΚ-ΓΙΣ.json",
+   "bytes": 1010,
+   "sha256": "a3a7bcf91e254b5ce807a7078e57ebc2872b663fb65b339dbc52bce52acba151"
+  },
+  {
+   "path": "data/6166/decisions/Ψ8ΣΝΩΛΚ-1ΤΜ.json",
+   "bytes": 796,
+   "sha256": "e1bafe41b2793420ad638942040fc7f8389c345c2b1191259ffd511a24a2f042"
+  },
+  {
+   "path": "data/6166/dossier_6166.md",
+   "bytes": 6020,
+   "sha256": "7ae2e97237e2ba6e3c3f01983ce6da251f4a037ddc53dcf5e28cb35e8f480b4a"
+  },
+  {
+   "path": "data/6166/hydration_log.json",
+   "bytes": 782,
+   "sha256": "2de96dd9e411815b15920e9ba7b059039c5838b847a04d4384d04db88cab0a8a"
+  },
+  {
+   "path": "data/6166/normalized/decisions.csv",
+   "bytes": 2236,
+   "sha256": "176c92a5c91e8e1c8dd3cb0ab60f42ff48de654eb3091166710af23aba109688",
+   "rows": 8,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/6166/normalized/monthly_summary.csv",
+   "bytes": 141,
+   "sha256": "ea79aaf33dda22c721b687ed9ebd34d4d579ddd17508879f0b9a92578ada7c4e",
+   "rows": 2,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/6166/normalized/procurements.csv",
+   "bytes": 2236,
+   "sha256": "176c92a5c91e8e1c8dd3cb0ab60f42ff48de654eb3091166710af23aba109688",
+   "rows": 8,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/6166/real/awards_2026_feb_mar.csv",
+   "bytes": 14880,
+   "sha256": "bbd4346c2ce7961622c79f02154e39dc76c0cd4e374a7bfc92fb94fb1747cb45",
+   "rows": 106,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/6166/search_exports/2026_01_test.json",
+   "bytes": 2336,
+   "sha256": "d7846842a83d2721e42f96a69c31eba9f7efffa1984b3bc5a59bd0fb25cb4067"
+  },
+  {
+   "path": "data/99221923/payments/anomalies.csv",
+   "bytes": 72,
+   "sha256": "52eca645875a7a9519d2482e55f32e4d4f1b1fb47a21a4e42b62aee2fe03a818",
+   "rows": 0,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221923/payments/excluded.csv",
+   "bytes": 362530,
+   "sha256": "3058848339b7b193aed84729d39240207d5564375ac91197f898d9087d6eb030",
+   "rows": 2468,
+   "sum_amount_eur": -1351466.26
+  },
+  {
+   "path": "data/99221923/payments/monthly_summary.csv",
+   "bytes": 1445,
+   "sha256": "5f36c2dbe7f3bd3e8d3e280486cb1e0a159fc103dadde9beb1e3af8866ea4f9c",
+   "rows": 61,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221923/payments/payments.csv",
+   "bytes": 2710213,
+   "sha256": "19f52c6a2fafd3447a4fdd3e42c5dcb013eb0fa5da71e2028836e0aef1bf07c8",
+   "rows": 13609,
+   "sum_amount_eur": 116329309.34
+  },
+  {
+   "path": "data/99221923/payments_B21/anomalies.csv",
+   "bytes": 72,
+   "sha256": "52eca645875a7a9519d2482e55f32e4d4f1b1fb47a21a4e42b62aee2fe03a818",
+   "rows": 0,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221923/payments_B21/excluded.csv",
+   "bytes": 3406,
+   "sha256": "b5007fe815b988e987ce102592b115982465fd1812c07b3e7f007a7cf631a5c5",
+   "rows": 16,
+   "sum_amount_eur": 1155625.53
+  },
+  {
+   "path": "data/99221923/payments_B21/monthly_summary.csv",
+   "bytes": 129,
+   "sha256": "7ece37cd62646d4ea940a14cdeb7eca996d006983cf2e64bdd6aefd438a0fa68",
+   "rows": 5,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221923/payments_B21/payments.csv",
+   "bytes": 3644,
+   "sha256": "dc4773da3f2db3674ccc0a13551b591e42d9c1c7d5fb7f41908638a615425438",
+   "rows": 16,
+   "sum_amount_eur": 1195673.98
+  },
+  {
+   "path": "data/99221940/payments/anomalies.csv",
+   "bytes": 571,
+   "sha256": "3b1f03db1f5336f484b976b0e88ab4fd4a35c8a1201488c5cd6d55e569064159",
+   "rows": 2,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221940/payments/excluded.csv",
+   "bytes": 102868,
+   "sha256": "bc30df1112a54674937a95ca43bbd3fbfe7ce47710fc5e2fb71db7680e1845bf",
+   "rows": 308,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221940/payments/monthly_summary.csv",
+   "bytes": 1360,
+   "sha256": "a85a5b9e0f19bb9ee9c88a25fa51fd1a5df15031d5568690f6815fae4935615b",
+   "rows": 58,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221940/payments/payments.csv",
+   "bytes": 940688,
+   "sha256": "c395d92a91162d6a4516b3556bd151647a6348441b77f43b2e78e633dec52cd5",
+   "rows": 4796,
+   "sum_amount_eur": 129095335.04
+  },
+  {
+   "path": "data/99221940/payments/payments_corrected.csv",
+   "bytes": 950716,
+   "sha256": "147f9e8edaf07c91c09362905e3b91cf1b0317454325d758c407457bb3c5bb3b",
+   "rows": 4796,
+   "sum_amount_eur": 82042987.28
+  },
+  {
+   "path": "data/99221940/payments/pdf_verified_corrections.csv",
+   "bytes": 2568,
+   "sha256": "21a5993dfcaee490d0b903881bbce307367d85c198236992535d3a4f5cd6937f",
+   "rows": 49,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221940/payments_B21/anomalies.csv",
+   "bytes": 72,
+   "sha256": "52eca645875a7a9519d2482e55f32e4d4f1b1fb47a21a4e42b62aee2fe03a818",
+   "rows": 0,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/drug__1382__6Ε9Λ46907Κ-ΔΓΧ.pdf",
+   "bytes": 786351,
+   "sha256": "49e88a4b689e9ec2685e8b7de4119f117c0ed8bce3bbd27060561c1b28d01223"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/drug__14998__6ΔΓΥ46907Κ-9ΑΖ.pdf",
+   "bytes": 757884,
+   "sha256": "12f50d2d618ddef5e6d8109103dcf70e479eb541fcb6a382263f149e487cf3d9"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/drug__14998__ΨΔΘ946907Κ-4ΕΔ.pdf",
+   "bytes": 757909,
+   "sha256": "11f2a32ce32bd316f5e8270dfcd83ae9620cb6e1c37efb9f4b5001196242b32e"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/drug__60648__9ΕΙΘ46907Κ-3ΩΝ.pdf",
+   "bytes": 756903,
+   "sha256": "84f2d2d85a86a4dac5ce5a9789da9fc5b8a55106c4b159802a1975440ed0bbae"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/generic__1798__Ω5ΒΤ46907Κ-ΔΔ0.pdf",
+   "bytes": 131974,
+   "sha256": "8d380df6bbd60586fb307acf70675087c2ea07b457e396ee563afbf747cfd2fc"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/generic__183258__ΨΣΧΗ46907Κ-ΧΓΒ.pdf",
+   "bytes": 63581,
+   "sha256": "2a13fa9c6648bdd6fb16481a6eef16f8adf82a7c4a61fdb3e7d65c22d87acc4f"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/generic__183743__ΨΤ4Ψ46907Κ-ΓΟ4.pdf",
+   "bytes": 62623,
+   "sha256": "9d733041b1ec388e5611bb51cea05e3297edaefb75a570bd9f8dd248cee3976b"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/generic__185094__9Ρ2Ρ46907Κ-Θ5Θ.pdf",
+   "bytes": 91362,
+   "sha256": "cf929433f4208ce3876973ca5c6a81e9f4e464eaeeed58f785791568db473bca"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/generic__2559126__6Ι4Α46907Κ-ΟΦΔ.pdf",
+   "bytes": 64442,
+   "sha256": "923bd141566a1853352b3da117486aab71abe7c5cc7f7f9ce82264df84938fe4"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/generic__488__ΨΔΔ446907Κ-94Ε.pdf",
+   "bytes": 63173,
+   "sha256": "2f176b0793cf4056d7309474b8e244e6094fcc580ff6debd1bc0df9900155b46"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/other__155469__619Ω46907Κ-9ΘΡ.pdf",
+   "bytes": 65721,
+   "sha256": "4e6141a26a6254fb72a2df9872aa7a38ae829f5cd479797bf29d41e77dc0c482"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/other__204__6ΔΖ946907Κ-ΞΛΔ.pdf",
+   "bytes": 678383,
+   "sha256": "322d7cc5e358edf77b050ed6f58b0b0710517f07e5ff45b00449a1b42e00c23c"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/payroll__153045__6ΚΛΚ46907Κ-Κ5Χ.pdf",
+   "bytes": 1221917,
+   "sha256": "ea603935a25cf3d2b1f85794c0792f615be2d1eaffceb1911b592da11b5d0db8"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_pdfs/payroll__223166__ΡΤΛΣ46907Κ-ΡΣΒ.pdf",
+   "bytes": 189036,
+   "sha256": "19ee91a0a391806d6a5cb37f66b3841834f8f7374be6f051b8d40cdeae709b51"
+  },
+  {
+   "path": "data/99221940/payments_B21/anon_sample.csv",
+   "bytes": 1187,
+   "sha256": "0326160a95fa56956db96da3ec89b387b59f717ad64f9ca2c0519a8e51122ac0",
+   "rows": 14,
+   "sum_amount_eur": 3737416.0
+  },
+  {
+   "path": "data/99221940/payments_B21/excluded.csv",
+   "bytes": 315358,
+   "sha256": "3dfb04d024699946ac5ccd52acf933302bb9211e46fbbcf7cc7ce2d0cf112570",
+   "rows": 2506,
+   "sum_amount_eur": 35631087.64
+  },
+  {
+   "path": "data/99221940/payments_B21/monthly_summary.csv",
+   "bytes": 373,
+   "sha256": "93b97c957d319624756318b61d9bc887d04c44131d47655fa8f79d9d7d7eca23",
+   "rows": 17,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/99221940/payments_B21/payments.csv",
+   "bytes": 97010,
+   "sha256": "f18d50868b3f87f26666124b394fcb91f04c70f7f269cfa38e61802f49409978",
+   "rows": 435,
+   "sum_amount_eur": 5830829.65
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/01_18590421_ΨΤ6Τ46907Κ-8ΕΘ.pdf",
+   "bytes": 68685,
+   "sha256": "de21dcb10e20401bb11cbcd8d6ef7d2fc90c69a7f1c4e61ec21f1c1e6bc3ccb0"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/02_6699820_Ψ60746907Κ-ΨΩΡ.pdf",
+   "bytes": 67579,
+   "sha256": "cf5fec9e424b1b4305fa7e1041b977369be818626b4798352a481ac2f69e9b13"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/03_5628028_6ΤΝ046907Κ-Χ4Ν.pdf",
+   "bytes": 67395,
+   "sha256": "c66935bf0f0f34ec6c97d05b158d01b8df76716304c5ae90a2c51a0e279c0ab1"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/04_4830757_6ΑΣΟ46907Κ-3ΑΝ.pdf",
+   "bytes": 69434,
+   "sha256": "a0d3c6474e1080c66bb8b3a18d8424add53b0b550f1a2adf3fede54d3ef66975"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/05_3048839_Ω02Ω46907Κ-ΡΦΑ.pdf",
+   "bytes": 66838,
+   "sha256": "922e0bc33db0dcb11906bd8e2c3351c6261108b9ac331bef31911b8f97d0b527"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/06_2212160_64Ο746907Κ-5ΡΘ.pdf",
+   "bytes": 67346,
+   "sha256": "65a536069c858cf19ee29bc1baa4e9e5a3c92e417d3d65133578dc12342ab666"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/07_1505530_96ΚΛ46907Κ-ΕΦΧ.pdf",
+   "bytes": 70952,
+   "sha256": "a4aa44102c95bd95394030125dce9a724ec48ebb1b9191d3bf82c782ab1e89a2"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/08_1395506_ΨΡΤΧ46907Κ-8ΛΖ.pdf",
+   "bytes": 69724,
+   "sha256": "84aadca6aa99ecec7263396040f6f332f60b24a2c033173d1407ea2c1b9e4133"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/09_998200_Ω2ΧΘ46907Κ-Β9Ζ.pdf",
+   "bytes": 68394,
+   "sha256": "800fd5f3ae65ff9fe682b0084a32c3618c5a404c8e3c94479bb2d34fa0ae3fd7"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/10_977728_ΩΓ1546907Κ-92Β.pdf",
+   "bytes": 68223,
+   "sha256": "78d131462766745e71cfaf593c8e975db92216fdbe18e51972005df6d8ea4f94"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/11_693160_9Β9546907Κ-ΔΦ7.pdf",
+   "bytes": 67082,
+   "sha256": "37852e6b33dd2b552109bbe2816a3ade98373700d8cd44c4a732917cb36cfa18"
+  },
+  {
+   "path": "data/99221940/suspect_pdfs/12_621396_9ΣΗΗ46907Κ-ΨΦΨ.pdf",
+   "bytes": 68828,
+   "sha256": "c84c30798293e7ab4b07b77548ea44d522c3793f812f1bb1f7b8145f6b6831a4"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/109111__97ΗΗ46907Κ-ΨΟΓ.pdf",
+   "bytes": 178862,
+   "sha256": "b361a4a15c8a0d342cdf48de4c21e2eb5c800b0214cb6e166da84aae2e3403d3"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/121272__6Δ5Φ46907Κ-ΒΗ7.pdf",
+   "bytes": 133903,
+   "sha256": "2231bbca31042eab6fed646d6f947dab536fc18cde21f879f731eed8622c666a"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/127317__97ΘΜ46907Κ-ΓΕΚ.pdf",
+   "bytes": 179577,
+   "sha256": "5dced26d3626f441a0b7b98ff216233da47d329c2d002ee553804ea5f6568e60"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/1395506__ΨΡΤΧ46907Κ-8ΛΖ.pdf",
+   "bytes": 69724,
+   "sha256": "84aadca6aa99ecec7263396040f6f332f60b24a2c033173d1407ea2c1b9e4133"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/1505530__96ΚΛ46907Κ-ΕΦΧ.pdf",
+   "bytes": 70952,
+   "sha256": "a4aa44102c95bd95394030125dce9a724ec48ebb1b9191d3bf82c782ab1e89a2"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/157480__ΨΨΗΜ46907Κ-7Υ9.pdf",
+   "bytes": 133946,
+   "sha256": "e35849a3223b33c7307085e086991c95902e4ce6b69e39b80066e72a32ec1223"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/160726__ΩΜ0Γ46907Κ-ΩΤ2.pdf",
+   "bytes": 67007,
+   "sha256": "d95c5cf0523279f616adc745cd9d35a2124bebf096a8d4ca3bcc2ec5d4d7ec37"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/161820__6ΒΒΒ46907Κ-4ΚΑ.pdf",
+   "bytes": 65011,
+   "sha256": "2621f79c400afd04c9c70cc5607a2b4d3349b8427e0c297073e34355c7a71dea"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/18590421__ΨΤ6Τ46907Κ-8ΕΘ.pdf",
+   "bytes": 68685,
+   "sha256": "de21dcb10e20401bb11cbcd8d6ef7d2fc90c69a7f1c4e61ec21f1c1e6bc3ccb0"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/2212160__64Ο746907Κ-5ΡΘ.pdf",
+   "bytes": 67346,
+   "sha256": "65a536069c858cf19ee29bc1baa4e9e5a3c92e417d3d65133578dc12342ab666"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/283946__ΡΡ2Μ46907Κ-ΗΕΦ.pdf",
+   "bytes": 69870,
+   "sha256": "89017a68b209de441a220389c22a8502148a11e279d295f533712ed5fab4bc0c"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/296856__ΨΞΥΥ46907Κ-ΥΩΛ.pdf",
+   "bytes": 178530,
+   "sha256": "3a5e9cad84712306f810a00883a9612fdeb0b5d8b26613c3a4a8a5b84d69c060"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/297600__698Β46907Κ-0Ξ5.pdf",
+   "bytes": 67343,
+   "sha256": "e7422af5f5c4baf8ca1c859dd3cd6e70ace1707efc219dfde8b143c345a185a0"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/3048839__Ω02Ω46907Κ-ΡΦΑ.pdf",
+   "bytes": 66838,
+   "sha256": "922e0bc33db0dcb11906bd8e2c3351c6261108b9ac331bef31911b8f97d0b527"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/319920__63Γ746907Κ-ΡΘΡ.pdf",
+   "bytes": 65217,
+   "sha256": "6197f8d6256391a99be122921972a5b8efb1697d90d4bd88f9e8228439383572"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/461652__6ΗΒΒ46907Κ-Λ9Ξ.pdf",
+   "bytes": 67078,
+   "sha256": "0c9ca7f2ce1354bd61ac7f92c8eb2ca86720190e497a607bea4994416783e35d"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/4830757__6ΑΣΟ46907Κ-3ΑΝ.pdf",
+   "bytes": 69434,
+   "sha256": "a0d3c6474e1080c66bb8b3a18d8424add53b0b550f1a2adf3fede54d3ef66975"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/493245__99ΨΙ46907Κ-ΣΡΒ.pdf",
+   "bytes": 65905,
+   "sha256": "2a007110ef7e23b74689150426e90d7fcacba380bd34e062366ac6d978d6c7a9"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/50000__ΨΚΝΤ46907Κ-ΒΥΤ.pdf",
+   "bytes": 134333,
+   "sha256": "f7b32dff4e9a7ada421bf11317735adcf43b7275ae80b53c703947a25d4c1ec2"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/51117__Ω3ΤΓ46907Κ-932.pdf",
+   "bytes": 66630,
+   "sha256": "aac3fb3cce0ccb24090a7722ca2483a61ccec3b8f2997cf2733dc703cf114d8c"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/54188__6ΡΘ546907Κ-8ΟΝ.pdf",
+   "bytes": 66241,
+   "sha256": "f8821ddaf73a68d2aeda2738a32dec7d85b8c5ea4f34b2e2dd0f8b4ffbd878c6"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/55800__9ΨΗΛ46907Κ-Γ6Ξ.pdf",
+   "bytes": 178087,
+   "sha256": "8abd5186e75bd509a715735c720ed814a9fd2b28de888b49e0f43b68bb90b231"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/55800__Ψ4ΙΖ46907Κ-ΖΙΞ.pdf",
+   "bytes": 178067,
+   "sha256": "c2f2c823a1a7eead034c9a2526308c96c9983bccee033db3df1672f1bfad9d0d"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/5628028__6ΤΝ046907Κ-Χ4Ν.pdf",
+   "bytes": 67395,
+   "sha256": "c66935bf0f0f34ec6c97d05b158d01b8df76716304c5ae90a2c51a0e279c0ab1"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/58094__9ΡΤ746907Κ-Β52.pdf",
+   "bytes": 67693,
+   "sha256": "a8120e3c7db6a181e7a99c67b7d3dc0ead291be70bea4b8e1482f6d1e35990f7"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/58602__6ΑΛΥ46907Κ-Ν5Σ.pdf",
+   "bytes": 68708,
+   "sha256": "8d8fbd9c8131a0dc38c08961f531c52fd81b66d82299e1a1013b43f8ecf9cd9f"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/59303__6ΘΗΤ46907Κ-ΨΔΤ.pdf",
+   "bytes": 179597,
+   "sha256": "b74b3297ca53c52ab740fb72d57bd3e551914f1f5d96dc745377c8d830c0cdf1"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/621396__9ΣΗΗ46907Κ-ΨΦΨ.pdf",
+   "bytes": 68828,
+   "sha256": "c84c30798293e7ab4b07b77548ea44d522c3793f812f1bb1f7b8145f6b6831a4"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/63984__ΩΗΥΘ46907Κ-Ξ84.pdf",
+   "bytes": 67418,
+   "sha256": "6e696aed6b7552e914153a694d66f2b52648767c86a3c01a8fca4505b49041ce"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/6699820__Ψ60746907Κ-ΨΩΡ.pdf",
+   "bytes": 67579,
+   "sha256": "cf5fec9e424b1b4305fa7e1041b977369be818626b4798352a481ac2f69e9b13"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/67270__9ΣΠΕ46907Κ-ΟΣΡ.pdf",
+   "bytes": 177141,
+   "sha256": "d43c24dc15d98a504472d1da1188aa3028d6a6da7d057776b598e00ff67ac99e"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/693160__9Β9546907Κ-ΔΦ7.pdf",
+   "bytes": 67082,
+   "sha256": "37852e6b33dd2b552109bbe2816a3ade98373700d8cd44c4a732917cb36cfa18"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/69936__60Κ446907Κ-5ΩΦ.pdf",
+   "bytes": 67601,
+   "sha256": "b0aac3b28dcbf103e9870953fcc4d3debb4b5dd0dc486ce980a30ff6d593a884"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/69936__63ΞΛ46907Κ-ΗΟΚ.pdf",
+   "bytes": 65301,
+   "sha256": "2abed5ad1f57f3ee21143bdc1d388e42da9003a913c1bd7b63c9e463d7412afe"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/69936__9ΛΧΘ46907Κ-ΟΛ9.pdf",
+   "bytes": 68455,
+   "sha256": "75ab10b7597847fb25bddce556bced288bbdb49b8d443aaba8a735d1c8cc442a"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/69936__Ψ6ΙΒ46907Κ-Δ2Λ.pdf",
+   "bytes": 68598,
+   "sha256": "5b3f3bc96c815607b20afad20900f47df1a51f721dd8cdf02b1bbc6e86c3cddf"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/70457__ΨΩΛΨ46907Κ-Ξ5Χ.pdf",
+   "bytes": 69733,
+   "sha256": "0c63ae8f0a38301e406a332c89cbdaf2c7941f3b3a37acdba562f5481c00530e"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/81344__979246907Κ-Η6Ν.pdf",
+   "bytes": 178230,
+   "sha256": "d701ba9f60508ae20a8c8b24be27d5e8dfe926f84d4b98d6896cb97dfc5aa33c"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/81344__ΡΘΝΕ46907Κ-ΛΤΙ.pdf",
+   "bytes": 178894,
+   "sha256": "8f5ad6d4bc57bfd7ceb78dd5d06aae327302c91462ede90b74f0d358faf646ad"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/81744__9Ο4Α46907Κ-ΖΨ2.pdf",
+   "bytes": 179483,
+   "sha256": "28cb2bf6094b454c90e903893ac7ca2929d4f7e9740f347773419eaadb018318"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/81840__Ρ6ΡΒ46907Κ-ΩΝ3.pdf",
+   "bytes": 133816,
+   "sha256": "1e00b367085149607e3f453c7c296297923d900e836d0e217e5d7dbe1df00a8a"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/84984__ΨΓΛΑ46907Κ-ΧΓΚ.pdf",
+   "bytes": 179113,
+   "sha256": "88d3af072a4e232352d7a87d8638512455bc30e019cd7909c9c2e0b649b41a6b"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/92578__659546907Κ-5ΝΖ.pdf",
+   "bytes": 64391,
+   "sha256": "9d65ecc5bdf697882168cffe15e2fa31dc47123664b95996fd2c5641e9d68b9f"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/92958__9Ξ0Ω46907Κ-Τ4Κ.pdf",
+   "bytes": 64093,
+   "sha256": "f60b44ad8c8b98cb6f43f976f3793cd2ad94024209f876afa74485df598d7027"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/92958__Ψ5Ξ346907Κ-13Ζ.pdf",
+   "bytes": 67719,
+   "sha256": "15bcf83bcd99ae3af26bef1db3d987372126d0b2d17f9b31b3320d7f521c5d9a"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/977728__ΩΓ1546907Κ-92Β.pdf",
+   "bytes": 68223,
+   "sha256": "78d131462766745e71cfaf593c8e975db92216fdbe18e51972005df6d8ea4f94"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/99696__6Ο3Ζ46907Κ-Φ0Ρ.pdf",
+   "bytes": 66429,
+   "sha256": "58d3cee619452425e867faed1137fb60bc0e37c07092f1d7afbf07dfdc6fd117"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/99696__9ΓΠ846907Κ-ΩΣΕ.pdf",
+   "bytes": 65918,
+   "sha256": "b0b23f55113b13cced2ee4d6fb701de245ea611aaf9c368cde40755f937cea17"
+  },
+  {
+   "path": "data/99221940/verify_pdfs/998200__Ω2ΧΘ46907Κ-Β9Ζ.pdf",
+   "bytes": 68394,
+   "sha256": "800fd5f3ae65ff9fe682b0084a32c3618c5a404c8e3c94479bb2d34fa0ae3fd7"
+  },
+  {
+   "path": "data/municipal_benchmark_2020_2026.csv",
+   "bytes": 1694,
+   "sha256": "3ac4563e1ed84bc4020bc779c99adec13483ef87ce46c7baaf4d0c65334d7d53",
+   "rows": 11,
+   "sum_amount_eur": null
+  },
+  {
+   "path": "data/rhodes_hist/ANOMALY_ge_healthcare.md",
+   "bytes": 692,
+   "sha256": "c53936f4f7794a4d5b7e0961df7776092c04e6e764362326ee9325fd8de805e9"
+  },
+  {
+   "path": "data/rhodes_hist/aug2025.txt",
+   "bytes": 595,
+   "sha256": "1304c519e88192562ff48797f83c6f38905e3b4f0c557eb1a2b61970994e2817"
+  },
+  {
+   "path": "data/rhodes_hist/aug2025_selfref_excluded.txt",
+   "bytes": 21,
+   "sha256": "eed3c0cc6395e4329b4502cf69b628a3e3b3ddf9f8670b3a897b64ed1442ea8f"
+  },
+  {
+   "path": "data/rhodes_hist/oct2025_p0.txt",
+   "bytes": 368,
+   "sha256": "585ab4e4989eb319d655f82a27b8e9ab1f3fc9cfaffe1d82e676d0f2b4fe83d0"
+  },
+  {
+   "path": "data/rhodes_hist/selfref_excluded_all.txt",
+   "bytes": 20,
+   "sha256": "cb63a4e1dda835de0dbc4426406a431edecabc53117f636a8cb552cd1ebed549"
+  },
+  {
+   "path": "data/rhodes_hist/sep2025_p0.txt",
+   "bytes": 369,
+   "sha256": "d58cddf4f5c540226217119d86859c446f6ff8f74daa4bf0cc794d523f1a8263"
+  },
+  {
+   "path": "data/rhodes_hist/sep2025_p1.txt",
+   "bytes": 354,
+   "sha256": "8eb2df5589b283a0353b39d7d52944307d02443dde24518acb97b2daaa5058f4"
+  },
+  {
+   "path": "data/rhodes_hist/sep2025_p2.txt",
+   "bytes": 176,
+   "sha256": "2a80041463068d880c9f4d7f6a5be116262e026b2c5aebcdbe8b0773477983c1"
+  }
+ ]
+}

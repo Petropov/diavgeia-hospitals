@@ -48,6 +48,22 @@ Convention for updates: re-run, then commit with the extraction date in the mess
 (`data refresh 2026-09-01`). Diavgeia is live — two runs minutes apart differed by €5,549 —
 so **every figure must carry its extraction date**.
 
+## Verifiability
+
+Every figure is independently checkable — see **`DATA_PROVENANCE.md`**. In short:
+
+| level | artefact | check it yourself |
+|---|---|---|
+| L1 | **ΑΔΑ** on every row | `diavgeia.gov.gr/opendata/decisions/{ADA}.json` — the government's own server, no need to trust this repo |
+| L2 | gzipped raw API responses (`--save-raw`) | audit our parsing, not just our arithmetic |
+| L3 | source PDFs | the legally authoritative amount (how the ×100 errors were proven) |
+| L4 | `MANIFEST.json` | SHA-256 + row counts + **pinned totals**; `make_manifest.py --verify` |
+
+Diavgeia is **live and mutable** — two extractions minutes apart differed by €5,549.
+**Every figure must be quoted with its extraction date.** Re-running and diffing is
+how you detect what the government changed (e.g. whether the €94M GE Healthcare
+phantom record ever gets corrected).
+
 ## Read before using
 
 - `reports/Known_Unknowns.md` — what these datasets **cannot** show. All verification was

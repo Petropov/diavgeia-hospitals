@@ -72,6 +72,9 @@ PAGE_SIZE = 200
 SLEEP = 0.4
 
 
+RAW_SINK = {"dir": None}   # set from main() when --save-raw is used
+
+
 def fetch(params, retries=4):
     url = API + "?" + urllib.parse.urlencode(params, encoding="utf-8")
     last = None
@@ -85,6 +88,18 @@ def fetch(params, retries=4):
                 raw = r.read().decode("utf-8")
             if not raw.strip():
                 raise ValueError("empty response body")
+            # Archive the untouched server response BEFORE parsing. This is what
+            # makes our parsing auditable and later government edits detectable:
+            # without it, a reader can only take our CSVs on trust.
+            if RAW_SINK["dir"]:
+                import gzip
+                os.makedirs(RAW_SINK["dir"], exist_ok=True)
+                stamp = (f"{params.get('type','')}_{params.get('from_issue_date')}"
+                         f"_{params.get('to_issue_date')}_p{params.get('page')}"
+                         .replace("/", "-"))
+                with gzip.open(os.path.join(RAW_SINK["dir"], stamp + ".json.gz"),
+                               "wt", encoding="utf-8") as g:
+                    g.write(raw)
             return json.loads(raw)      # json handles 9.4472918E7 correctly
         except Exception as e:          # noqa: BLE001
             last = e
@@ -100,6 +115,8 @@ def windows(start: date, end: date, span=MAX_SPAN_DAYS):
         yield cur, nxt
         cur = nxt
 
+
+CURRENCY_RX = __import__("re").compile(r"^\d{1,3}(?:\.\d{3})*,\d{2}$")
 
 def digits(s):
     return "".join(ch for ch in str(s) if ch.isdigit()).lstrip("0")
@@ -163,6 +180,18 @@ def classify(dec, org_afm):
                          "unparseable amount"))
             continue
 
+        # --- field-swap detector (amount<->kae transposed) ----------------
+        # Proven live at ΓΝ Πτολεμαΐδας: amount=2.42e13 (the KAE code),
+        # kae="6.261,99" (the real EUR amount). Recover and flag.
+        kae_s = str(sp.get("kae") or "").strip()
+        if amount >= 5_000_000 and CURRENCY_RX.match(kae_s):
+            true_amt = float(kae_s.replace(".", "").replace(",", "."))
+            anom.append((ada, issue_iso, subject, afm, name, f"{amount:.2f}",
+                         f"FIELD SWAP: kae holds true amount {true_amt:.2f}"))
+            pays.append((ada, issue_iso, subject + " [SWAP-CORRECTED]", afm, name,
+                         round(true_amt, 2), "", ""))
+            continue
+
         # --- AFM-in-amount detector -------------------------------------
         # The tax ID typed into the amount field. Compare digit strings so
         # 094472918 == 94472918.0 is caught regardless of leading zero.
@@ -192,6 +221,9 @@ def main():
     ap.add_argument("--type", default=PAYMENT_TYPE,
                     help="decision type (default Β.2.2 payment orders)")
     ap.add_argument("--sleep", type=float, default=SLEEP)
+    ap.add_argument("--save-raw", action="store_true",
+                    help="archive gzipped raw API responses for auditability "
+                         "(recommended for anything that will be published)")
     args = ap.parse_args()
 
     start = date.fromisoformat(args.start)
@@ -199,6 +231,9 @@ def main():
     outdir = args.outdir or f"data/{args.org}/payments"
     import os
     os.makedirs(outdir, exist_ok=True)
+    if args.save_raw:
+        RAW_SINK["dir"] = os.path.join(outdir, "raw")
+        print(f"archiving raw API responses -> {RAW_SINK['dir']}/")
 
     all_pay, all_excl, all_anom = [], [], []
     org_afm = None

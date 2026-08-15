@@ -170,8 +170,10 @@ suppliers flagged in the per-destination structuring screen
 (`Integrity_Signals_Rhodes_vs_Lamia.md` §1b).
 
 **Both grew ~30% in three years** (+34% vs +28%, 2022→2025) — the inflation story is
-system-wide, not hospital-specific. And on *all* payment value per bed they are within 1%
-of each other (€368.6k vs €372.6k over five years).
+system-wide, not hospital-specific. And on *all* payment value per bed they are within a
+few percent of each other (€368.6k vs €372.6k over five years — but note Rhodes' Β.2.1
+amounts are unscreened for ×100 errors and contain at least one proven €2.5M phantom, so
+"~1%" would be false precision; see `SENSE_CHECK.md`).
 
 **Where they genuinely differ:**
 1. **Payment administration.** Lamia: many small, steady, well-coded payments (median

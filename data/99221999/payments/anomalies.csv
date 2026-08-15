@@ -1,0 +1,4 @@
+ada,issue_date,subject,supplier_afm,supplier_name,recorded_amount,note
+ΩΓΖ746906Β-ΦΙΛ,2021-08-06,ΕΞΩΣΥΜΒΑΤΙΚΑ ΥΛΙΚΑ 12/2020,094396063,ΝΟΣΟΚΟΜΕΙΑΚΗ ΓΡΑΜΜΗ ΑΕ ΕΙΣΑΓΩΓΗΣ ΚΑΙ ΕΜΠΟΡΙΑΣ ΙΑΤΡΙΚΟΥ ΝΟΣΟΚΟΜΕΙΑΚΟΥ ΚΑΙ ΦΑΡΜΑΚΕΥΤΙΚΟΥ ΥΛΙΚΟΥ,94396063.00,amount equals supplier AFM - data-entry error
+ΩΤ6146906Β-ΜΩΙ,2022-02-02,ΕΞΩΣΥΜΒΑΤΙΚΑ ΥΛΙΚΑ 11/2020,094053472,JOHNSON  JOHNSON ΕΛΛΑΣ ΑΕBE,94053472.00,amount equals supplier AFM - data-entry error
+6ΗΑΤ46906Β-5Χ2,2022-01-27,ΕΞΩΣΥΜΒΑΤΙΚΑ ΥΛΙΚΑ 11/2020,094058260,SOL ΣΟΛ ΕΛΛΑΣ ΕΛΛΗΝΙΚΗ ΒΙΟΜΗΧΑΝΙΑ ΠΑΡΑΓΩΓΗΣ ΑΕΡΙΩΝ ΑΝΩΝΥΜΗ ΕΤΑΙΡΕΙΑ,94058260.00,FIELD SWAP: kae holds true amount 492.09
