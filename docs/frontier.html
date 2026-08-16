@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Efficient Frontier — do Greek hospitals have economies of scale?</title>
+<meta name="description" content="Supplier spend per patient-day across 40 Greek general hospitals: no economies of scale, but a clear efficient frontier of high-occupancy regional hospitals.">
+<style>
+:root{--ink:#1a1d23;--muted:#5b6472;--accent:#0f5c8c;--bg:#fafaf8;--card:#fff;--line:#e5e3dd;--warn:#a33}
+*{box-sizing:border-box;margin:0}
+body{font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg)}
+header{background:#12354d;color:#fff;padding:2.6rem 1.5rem 2.2rem}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+h1{font-size:1.8rem;line-height:1.25;font-weight:700;max-width:760px}
+.sub{color:#b8cfe0;margin-top:.7rem;font-size:1.02rem;max-width:700px}
+.lang{float:right;font-family:system-ui,sans-serif;font-size:.9rem}
+.lang a{color:#fff;text-decoration:none;border:1px solid #ffffff66;padding:.25rem .7rem;border-radius:4px;margin-left:.4rem}
+main{padding:2.2rem 0 4rem}
+section{margin:2.2rem auto;max-width:860px;padding:0 1rem}
+h2{font-size:1.35rem;color:var(--accent);margin-bottom:.8rem}
+p{margin:.8rem 0}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-family:system-ui,sans-serif;font-size:.82rem;background:var(--card)}
+th,td{border:1px solid var(--line);padding:.35rem .5rem;text-align:left;white-space:nowrap}
+th{background:#f0efe9}
+td.r,th.r{text-align:right}
+td:first-child{white-space:normal;min-width:11rem}
+.note{background:#fdf6e3;border-left:4px solid #c9a227;padding:.8rem 1rem;font-size:.95rem;margin:1.2rem 0}
+.good{color:#1d6b34}.bad{color:var(--warn)}
+a{color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
+.small{font-size:.9rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="lang"><a href="index.html">← Main report</a><a href="frontier-gr.html">Ελληνικά</a></div>
+    <h1>The efficient frontier: do Greek hospitals have economies of scale?</h1>
+    <p class="sub">Supplier spend per patient-day across 40 general hospitals, joined with official 2024 activity data. Short answer: no scale economies — but a clear frontier, with a recognizable profile.</p>
+  </div>
+</header>
+<main>
+
+<section>
+<h2>No economies of scale</h2>
+<p>If bigger hospitals bought cheaper, cost per patient-day would fall with volume. It rises: the correlation between (log) annual patient-days and supplier €/patient-day is <b>+0.30</b>, and the volume tiers tell the story directly:</p>
+<table>
+<tr><th>Volume tier (general hospitals)</th><th class="r">Median patient-days/yr</th><th class="r">Median supplier €/patient-day</th><th class="r">Median occupancy</th></tr>
+<tr><td>Small volume (bottom third)</td><td class="r">36,838</td><td class="r">277</td><td class="r">54%</td></tr>
+<tr><td>Mid volume</td><td class="r">68,834</td><td class="r good">220</td><td class="r">61%</td></tr>
+<tr><td>High volume (top third)</td><td class="r">173,358</td><td class="r bad">404</td><td class="r">78%</td></tr>
+</table>
+<p>Energy shows the same non-result (correlation of beds with €/bed on energy: 0.15 — nothing). The likely driver is case-mix, not inefficiency: large hospitals practice tertiary medicine with expensive drugs. But the policy implication holds either way — <b>this data offers no support for merger-for-scale arguments</b>. Whatever big hospitals buy with size, it is not cheaper supplies per day of care.</p>
+</section>
+
+<section>
+<h2>The frontier — and its profile</h2>
+<p>Sorted by supplier cost per patient-day, a distinct efficient frontier emerges, and its members look alike: <b>regional general hospitals of 230–400 beds running at high occupancy</b>. Τρίπολη delivers a patient-day of care for €160 in supplier costs at 89% occupancy; Χαλκίδα combines €202/day with the country's #2 data-quality score — cheap <em>and</em> transparent are not in tension.</p>
+<table>
+<tr><th>Hospital</th><th class="r">€/patient-day</th><th class="r">Occupancy</th><th class="r">Beds</th><th class="r">DDQI</th></tr>
+<tr><td>Γ.Ν. Κέρκυρας*</td><td class="r good">104</td><td class="r">79%</td><td class="r">405</td><td class="r bad">36.8</td></tr>
+<tr><td>Γ.Ν. Κατερίνης</td><td class="r good">127</td><td class="r">73%</td><td class="r">361</td><td class="r">72.0</td></tr>
+<tr><td>Γ.Ν. Καλαμάτας</td><td class="r good">138</td><td class="r">76%</td><td class="r">308</td><td class="r">81.3</td></tr>
+<tr><td>Γ.Ν. Παναρκαδικό Τρίπολης</td><td class="r good">160</td><td class="r">89%</td><td class="r">295</td><td class="r">78.8</td></tr>
+<tr><td>Γ.Ν. Άρτας</td><td class="r good">180</td><td class="r">65%</td><td class="r">226</td><td class="r">61.6</td></tr>
+<tr><td>Γ.Ν. Χαλκίδας</td><td class="r good">202</td><td class="r">73%</td><td class="r">233</td><td class="r good">97.4</td></tr>
+</table>
+<p class="small">*Κέρκυρα's low spending was verified as real against its audited απολογισμός (see main report, Part IV) — but its bottom-place data quality means its figure carries more uncertainty than the others.</p>
+<p>At the other end, the most expensive patient-days belong to Λαϊκό (€768 — transplant/hemophilia case-mix at 91% occupancy), ΠΓΝ Αλεξανδρούπολης (€522 at only 63% occupancy — the combination worth a question), Γ. Παπανικολάου (€512) and Ευαγγελισμός (€474 at 100% occupancy).</p>
+<p>Full ranking of all 40 general hospitals:</p>
+<div style="overflow-x:auto">
+<table id="ftab">
+<thead><tr><th data-k="name">Hospital</th><th class="r" data-k="epd">€/patient-day</th><th class="r" data-k="occ">Occupancy %</th><th class="r" data-k="beds">Beds</th><th class="r" data-k="ddqi">DDQI</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>What a real "north star" would take</h2>
+<p>The defensible target is not "the cheapest hospital" but a <b>should-cost band per peer group at comparable occupancy</b>: on this data, a well-run 250–400-bed regional general hospital at ~75% occupancy runs <b>€130–200 per patient-day in supplier costs</b>. Deviation above that band is not an accusation — it is a question with an address.</p>
+<p>Two stated limits before anyone builds policy on it: this measures supplier spend only (payroll is excluded — though we demonstrated it can be extracted from each hospital's published απολογισμός), and there is no case-mix adjustment (Greece's ΚΕΝ/DRG data would be the natural next join). Within peer groups, both biases are muted; across groups they dominate — which is why this page compares only general hospitals.</p>
+<div class="note">Method, data and verification chain: see the <a href="index.html">main report</a> and the <a href="https://github.com/Petropov/diavgeia-hospitals">repository</a>.</div>
+</section>
+
+</main>
+<script>
+fetch('frontier.json').then(r=>r.json()).then(data=>{
+  const tb=document.querySelector('#ftab tbody');
+  const render=rows=>{tb.innerHTML=rows.map(h=>
+    `<tr><td>${h.name}</td><td class="r">${h.epd}</td><td class="r">${h.occ}%</td><td class="r">${h.beds}</td><td class="r">${h.ddqi.toFixed(1)}</td></tr>`).join('');};
+  let cur={k:'epd',asc:true};
+  const view=()=>{render([...data].sort((a,b)=>{const x=a[cur.k],y=b[cur.k];
+    return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);}));};
+  view();
+  document.querySelectorAll('#ftab th').forEach(th=>{
+    th.style.cursor='pointer';
+    th.onclick=()=>{const k=th.dataset.k;cur.asc=(cur.k===k)?!cur.asc:true;cur.k=k;view();};
+  });
+});
+</script>
+<footer>
+  <div class="wrap">Independent research · data 2026-08-15 · <a href="index.html">main report</a> · <a href="frontier-gr.html">Ελληνικά</a></div>
+</footer>
+</body>
+</html>
