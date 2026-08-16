@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://petropov.github.io/diavgeia-hospitals/sitemap.xml
