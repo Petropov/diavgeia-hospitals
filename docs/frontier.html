@@ -29,16 +29,32 @@ td:first-child{white-space:normal;min-width:11rem}
 a{color:var(--accent)}
 footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
 .small{font-size:.9rem;color:var(--muted)}
+nav{position:sticky;top:0;z-index:10;background:#12354d;border-top:1px solid #ffffff22;font-family:system-ui,sans-serif}
+nav .wrap{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap;padding:.35rem 1rem}
+nav a{color:#cfe1ef;text-decoration:none;padding:.35rem .7rem;border-radius:5px;font-size:.9rem}
+nav a:hover{background:#ffffff18;color:#fff}
+nav a.on{background:#ffffff22;color:#fff;font-weight:600}
+nav .sp{flex:1}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="lang"><a href="index.html">← Main report</a><a href="frontier-gr.html">Ελληνικά</a></div>
+    
     <h1>The efficient frontier: do Greek hospitals have economies of scale?</h1>
     <p class="sub">Supplier spend per patient-day across 40 general hospitals, joined with official 2024 activity data. Short answer: no scale economies — but a clear frontier, with a recognizable profile.</p>
   </div>
 </header>
+<nav><div class="wrap">
+<a href="index.html#overview">Overview</a>
+<a href="index.html#quality">Data Quality</a>
+<a href="index.html#findings">Findings</a>
+<a href="index.html#hospitals">Hospitals</a>
+<a class="on" href="frontier.html">Efficient Frontier</a>
+<span class="sp"></span>
+<a href="frontier-gr.html">Ελληνικά</a>
+</div></nav>
 <main>
 
 <section>

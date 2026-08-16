@@ -29,16 +29,32 @@ td:first-child{white-space:normal;min-width:11rem}
 a{color:var(--accent)}
 footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
 .small{font-size:.9rem;color:var(--muted)}
+nav{position:sticky;top:0;z-index:10;background:#12354d;border-top:1px solid #ffffff22;font-family:system-ui,sans-serif}
+nav .wrap{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap;padding:.35rem 1rem}
+nav a{color:#cfe1ef;text-decoration:none;padding:.35rem .7rem;border-radius:5px;font-size:.9rem}
+nav a:hover{background:#ffffff18;color:#fff}
+nav a.on{background:#ffffff22;color:#fff;font-weight:600}
+nav .sp{flex:1}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="lang"><a href="gr.html">← Κύρια έκθεση</a><a href="frontier.html">English</a></div>
+    
     <h1>Το αποδοτικό μέτωπο: έχουν τα ελληνικά νοσοκομεία οικονομίες κλίμακας;</h1>
     <p class="sub">Δαπάνη προμηθευτών ανά ημέρα νοσηλείας σε 40 γενικά νοσοκομεία, ενωμένη με τα επίσημα στοιχεία κίνησης 2024. Σύντομη απάντηση: όχι οικονομίες κλίμακας — αλλά σαφές μέτωπο, με αναγνωρίσιμο προφίλ.</p>
   </div>
 </header>
+<nav><div class="wrap">
+<a href="gr.html#overview">Επισκόπηση</a>
+<a href="gr.html#quality">Ποιότητα</a>
+<a href="gr.html#findings">Ευρήματα</a>
+<a href="gr.html#hospitals">Νοσοκομεία</a>
+<a class="on" href="frontier-gr.html">Αποδοτικό Μέτωπο</a>
+<span class="sp"></span>
+<a href="frontier.html">English</a>
+</div></nav>
 <main>
 
 <section>

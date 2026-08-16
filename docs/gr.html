@@ -39,12 +39,19 @@ a{color:var(--accent)}
 footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
 footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 .small{font-size:.9rem;color:var(--muted)}
+nav{position:sticky;top:0;z-index:10;background:#12354d;border-top:1px solid #ffffff22;font-family:system-ui,sans-serif}
+nav .wrap{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap;padding:.35rem 1rem}
+nav a{color:#cfe1ef;text-decoration:none;padding:.35rem .7rem;border-radius:5px;font-size:.9rem}
+nav a:hover{background:#ffffff18;color:#fff}
+nav a.on{background:#ffffff22;color:#fff;font-weight:600}
+nav .sp{flex:1}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="lang"><a href="frontier-gr.html" style="margin-right:.4rem">Το Αποδοτικό Μέτωπο →</a><a href="index.html">English</a></div>
+    
     <h1>Οι πληρωμές των δημόσιων νοσοκομείων, ελεγμένες στα παραστατικά</h1>
     <p class="sub">Ανεξάρτητος έλεγχος των ενταλμάτων πληρωμής που δημοσιεύουν 50 δημόσια νοσοκομεία στη Διαύγεια. Τρία ερωτήματα: πώς μοιάζει το χρήμα, πόσο αξιόπιστα είναι τα δεδομένα της πλατφόρμας, και τι αποκαλύπτουν;</p>
     <div class="stats">
@@ -55,9 +62,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
     </div>
   </div>
 </header>
+<nav><div class="wrap">
+<a href="#overview">Επισκόπηση</a>
+<a href="#quality">Ποιότητα</a>
+<a href="#findings">Ευρήματα</a>
+<a href="#hospitals">Νοσοκομεία</a>
+<a href="frontier-gr.html">Αποδοτικό Μέτωπο</a>
+<span class="sp"></span>
+<a href="index.html">English</a>
+</div></nav>
 <main>
 
-<div class="part"><span>Μέρος Ι</span><h2>Η συνολική εικόνα</h2></div>
+<div class="part" id="overview"><span>Μέρος Ι</span><h2>Η συνολική εικόνα</h2></div>
 
 <section>
 <p>Κάθε δημόσιος φορέας υποχρεούται να αναρτά τις αποφάσεις δαπανών του στη <a href="https://diavgeia.gov.gr">Διαύγεια</a>. Για τα νοσοκομεία αυτό σημαίνει, κατ' αρχήν, δημόσιο αρχείο κάθε εντάλματος πληρωμής: ποιος πληρώθηκε, πόσο, για τι. Κατεβάσαμε πέντε χρόνια τέτοιων εγγραφών (Αύγ. 2021 – Αύγ. 2026) από τους 50 μεγαλύτερους νοσοκομειακούς εκδότες, ταξινομήσαμε εκατοντάδες χιλιάδες πράξεις και — το βήμα που συνήθως παραλείπεται — τις επαληθεύσαμε στα σκαναρισμένα πρωτότυπα.</p>
@@ -69,7 +85,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p>Κάθε ισχυρισμός ανάγεται σε έγγραφο: στρωματοποιημένο τυχαίο δείγμα 300 ενταλμάτων έναντι των σκαναρισμένων παραστατικών, έλεγχος και των 55 δημοσιευμένων πληρωμών άνω των €5 εκατ., 22.199 πράξεις προμηθειών για την επίλυση ύποπτων μοτίβων, και συμφωνία με απολογισμούς. Όλα τα δεδομένα, scripts και PDF επαλήθευσης βρίσκονται στο <a href="https://github.com/Petropov/diavgeia-hospitals">δημόσιο αποθετήριο</a>.</p>
 </section>
 
-<div class="part"><span>Μέρος ΙΙ</span><h2>Η ποιότητα της Διαύγειας</h2></div>
+<div class="part" id="quality"><span>Μέρος ΙΙ</span><h2>Η ποιότητα της Διαύγειας</h2></div>
 
 <section>
 <h3>Τα δεδομένα είναι 98% σωστά…</h3>
@@ -119,7 +135,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p>Εδώ αποκαλύπτεται ένα διεστραμμένο κίνητρο: τα κακά δεδομένα ρίχνουν τον βαθμό σου, αλλά <em>τα καθόλου δεδομένα σε εξαιρούν από τη βαθμολόγηση</em>. Κατάταξη που παραλείπει σιωπηλά τους μη δηλούντες επιβραβεύει τους πιο αδιαφανείς. Στα σύνολά μας εμφανίζονται ρητά ως «μη δηλούντα στο επίπεδο πληρωμών».</p>
 </section>
 
-<div class="part"><span>Μέρος ΙΙΙ</span><h2>Βασικά ευρήματα</h2></div>
+<div class="part" id="findings"><span>Μέρος ΙΙΙ</span><h2>Βασικά ευρήματα</h2></div>
 
 <section>
 <h3>1. Οι ενδείξεις κατάτμησης διαλύθηκαν όταν διαβάστηκαν τα έγγραφα ανάθεσης</h3>
@@ -143,7 +159,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p><b>Τυχαίοι έλεγχοι, όχι κυνήγι ακραίων τιμών.</b> Τα στοχευμένα φίλτρα βρήκαν μόνο υπερεκτιμήσεις· οι υποεκτιμήσεις εμφανίστηκαν μόνο στο τυχαίο δείγμα. Μόνο η τυχαιοποιημένη επαλήθευση μετρά αυτό που δεν ψάχνεις.</p>
 </section>
 
-<div class="part"><span>Μέρος IV</span><h2>Τα νοσοκομεία, ένα-ένα</h2></div>
+<div class="part" id="hospitals"><span>Μέρος IV</span><h2>Τα νοσοκομεία, ένα-ένα</h2></div>
 
 <section>
 <p>Κάθε νοσοκομείο της μελέτης, με την επαληθευμένη 5ετή δαπάνη προμηθευτών (διορθωμένη, μετά την καραντίνα), τον βαθμό ποιότητας δεδομένων, την τάση δαπανών και τη συγκέντρωση προμηθευτών. Κάντε κλικ στις επικεφαλίδες για ταξινόμηση — και <b>συγκρίνετε μόνο εντός ομοειδούς ομάδας</b>: ένα νησιωτικό νοσοκομείο 109 κλινών και ένα αθηναϊκό τριτοβάθμιο 826 κλινών είναι διαφορετικά πράγματα.</p>

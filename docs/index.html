@@ -39,12 +39,19 @@ a{color:var(--accent)}
 footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
 footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 .small{font-size:.9rem;color:var(--muted)}
+nav{position:sticky;top:0;z-index:10;background:#12354d;border-top:1px solid #ffffff22;font-family:system-ui,sans-serif}
+nav .wrap{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap;padding:.35rem 1rem}
+nav a{color:#cfe1ef;text-decoration:none;padding:.35rem .7rem;border-radius:5px;font-size:.9rem}
+nav a:hover{background:#ffffff18;color:#fff}
+nav a.on{background:#ffffff22;color:#fff;font-weight:600}
+nav .sp{flex:1}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="lang"><a href="frontier.html" style="margin-right:.4rem">The Efficient Frontier →</a><a href="gr.html">Ελληνικά</a></div>
+    
     <h1>Greek public hospital payments, checked against the documents</h1>
     <p class="sub">An independent audit of the payment records 50 Greek public hospitals publish on Diavgeia, the state transparency platform. Three questions: what does the money look like, can the platform's data be trusted, and what does it reveal?</p>
     <div class="stats">
@@ -55,9 +62,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
     </div>
   </div>
 </header>
+<nav><div class="wrap">
+<a href="#overview">Overview</a>
+<a href="#quality">Data Quality</a>
+<a href="#findings">Findings</a>
+<a href="#hospitals">Hospitals</a>
+<a href="frontier.html">Efficient Frontier</a>
+<span class="sp"></span>
+<a href="gr.html">Ελληνικά</a>
+</div></nav>
 <main>
 
-<div class="part"><span>Part I</span><h2>The overarching picture</h2></div>
+<div class="part" id="overview"><span>Part I</span><h2>The overarching picture</h2></div>
 
 <section>
 <p>Greece requires every public body to publish its spending decisions on <a href="https://diavgeia.gov.gr">Diavgeia</a>. For hospitals that means, in principle, a public record of every payment order: who was paid, how much, and for what. We downloaded five years of these records (August 2021 – August 2026) from the 50 largest hospital publishers, classified hundreds of thousands of decisions, and — the step usually skipped — verified them against the scanned source documents.</p>
@@ -69,7 +85,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p>Every claim traces to a document: a stratified random audit of 300 payment records against their scanned warrants, verification of all 55 published payments over €5M, 22,199 procurement decisions pulled to resolve flagged patterns, and reconciliation against hospitals' own απολογισμός. All data, scripts, and verification PDFs are in the <a href="https://github.com/Petropov/diavgeia-hospitals">public repository</a>.</p>
 </section>
 
-<div class="part"><span>Part II</span><h2>The quality of Diavgeia</h2></div>
+<div class="part" id="quality"><span>Part II</span><h2>The quality of Diavgeia</h2></div>
 
 <section>
 <h3>The data is 98% right…</h3>
@@ -119,7 +135,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p>It exposes a perverse incentive in transparency measurement: bad data lowers your score, but <em>no data exempts you from scoring entirely</em>. Any ranking that silently drops non-reporters rewards the most opaque institutions. Our totals list these hospitals explicitly as "non-reporting at the payment layer".</p>
 </section>
 
-<div class="part"><span>Part III</span><h2>Key findings</h2></div>
+<div class="part" id="findings"><span>Part III</span><h2>Key findings</h2></div>
 
 <section>
 <h3>1. The structuring flags dissolved when the award documents were read</h3>
@@ -143,7 +159,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <p><b>Random audits, not outlier-chasing.</b> Targeted screens only ever found overstatements; the understatements surfaced exclusively in the random sample. Randomized document verification is the only method that measures what you are not looking for.</p>
 </section>
 
-<div class="part"><span>Part IV</span><h2>The hospitals, one by one</h2></div>
+<div class="part" id="hospitals"><span>Part IV</span><h2>The hospitals, one by one</h2></div>
 
 <section>
 <p>Every hospital in the study, with its verified 5-year supplier spend (corrected, quarantine-filtered), data-quality score, spending trend and supplier concentration. Click any column header to sort — and <b>compare only within a peer group</b>: a 109-bed island hospital and an 826-bed Athens tertiary are different animals.</p>
