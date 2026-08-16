@@ -174,7 +174,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 <tr><td>Catering</td><td class="r">17</td><td class="r">1,058</td><td class="r">5,896 (Αττικόν)</td><td class="r">~56×</td></tr>
 <tr><td>Security</td><td class="r">21</td><td class="r">629</td><td class="r">3,315 (Αττικόν)</td><td class="r">~33×</td></tr>
 </table>
-<p>The full variation, hospital by hospital (2024–25 average, €/bed/yr; bars scaled per column; sortable; "—" = no matched outsourced spend, which may mean in-house provision or a matcher miss):</p>
+<p>The full variation, hospital by hospital (2024–25 average, €/bed/yr; bars scaled per column; sortable). <b>Coverage note:</b> we do not have complete data for every hospital — 5 are excluded for incomplete 2024 posting (ΠΓΝ Πατρών, Κοργιαλένειο, Βόλος, Καλαμάτα, Χανιά), and "—" means no matched outsourced spend: in-house provision, a local supplier the matcher missed, or spend via the anonymous ΧΕ layer — not zero cost.</p>
+<p>
+<select id="csize" style="font-size:.95rem;padding:.25rem .4rem">
+<option value="all">All sizes</option>
+<option value="large">Large &amp; university</option>
+<option value="medium">Medium general</option>
+<option value="small">Small general</option>
+<option value="specialty">Specialty</option>
+</select>
+<select id="cmetro" style="font-size:.95rem;padding:.25rem .4rem">
+<option value="all">Whole country</option>
+<option value="athens">Athens/Attica</option>
+<option value="thess">Thessaloniki</option>
+<option value="region">Rest of Greece</option>
+</select>
+</p>
 <div style="overflow-x:auto">
 <table id="ctab">
 <thead><tr>
@@ -243,9 +258,12 @@ fetch('hospitals.json').then(r=>r.json()).then(data=>{
   const render=rows=>{tb.innerHTML=rows.map(h=>
     `<tr><td>${h.name}</td>${cats.map(c=>cell(h[c],c)).join('')}</tr>`).join('');};
   let cur={k:'energy_pb',asc:false};
-  const view=()=>{render([...rowsAll].sort((a,b)=>{const x=a[cur.k]||0,y=b[cur.k]||0;
-    return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);}));};
-  view();
+  const cs=document.getElementById('csize'), cm=document.getElementById('cmetro');
+  const view=()=>{
+    let rows=rowsAll.filter(h=>(cs.value==='all'||h.group===cs.value)&&(cm.value==='all'||h.metro===cm.value));
+    render(rows.sort((a,b)=>{const x=a[cur.k]||0,y=b[cur.k]||0;
+      return (typeof x==='string'?x.localeCompare(y,'el'):x-y)*(cur.asc?1:-1);}));};
+  cs.onchange=view; cm.onchange=view; view();
   document.querySelectorAll('#ctab th').forEach(th=>{
     th.style.cursor='pointer';
     th.onclick=()=>{const k=th.dataset.k;cur.asc=(cur.k===k)?!cur.asc:(k==='name');cur.k=k;view();};
