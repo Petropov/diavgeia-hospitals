@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Stories — eight documents that say it all</title>
+<meta name="description" content="Eight real documents from Diavgeia that show how hospital spending transparency works — and how it fails.">
+<style>
+:root{--ink:#1a1d23;--muted:#5b6472;--accent:#0f5c8c;--bg:#fafaf8;--card:#fff;--line:#e5e3dd;--warn:#a33}
+*{box-sizing:border-box;margin:0}
+body{font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg)}
+header{background:#12354d;color:#fff;padding:2.6rem 1.5rem 2.2rem}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+h1{font-size:1.8rem;line-height:1.25;font-weight:700;max-width:760px}
+.sub{color:#b8cfe0;margin-top:.7rem;font-size:1.02rem;max-width:700px}
+nav{position:sticky;top:0;z-index:10;background:#12354d;border-top:1px solid #ffffff22;font-family:system-ui,sans-serif}
+nav .wrap{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap;padding:.35rem 1rem}
+nav a{color:#cfe1ef;text-decoration:none;padding:.35rem .7rem;border-radius:5px;font-size:.9rem}
+nav a:hover{background:#ffffff18;color:#fff}
+nav a.on{background:#ffffff22;color:#fff;font-weight:600}
+nav .sp{flex:1}
+main{padding:2.2rem 0 4rem}
+section{margin:0 auto;max-width:860px;padding:0 1rem}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.3rem 1.5rem;margin:1.4rem 0}
+.story h2{font-size:1.2rem;color:var(--accent);margin-bottom:.5rem}
+.story .k{font-family:system-ui,sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+blockquote{border-left:4px solid var(--accent);margin:.8rem 0;padding:.4rem 1rem;background:#f2f6f9;font-style:italic}
+p{margin:.7rem 0}
+a{color:var(--accent)}
+.ada{font-family:ui-monospace,monospace;font-size:.85rem}
+.moral{font-size:.95rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:.6rem;margin-top:.8rem}
+footer{border-top:1px solid var(--line);padding:2rem 1rem;color:var(--muted);font-size:.9rem;font-family:system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>The Stories: eight documents that say it all</h1>
+    <p class="sub">Behind every statistic in this audit sits a scanned piece of paper. These are the eight most eloquent — each with its ΑΔΑ, so you can open the same document we did.</p>
+  </div>
+</header>
+<nav><div class="wrap">
+<a href="index.html#overview">Overview</a>
+<a href="index.html#quality">Data Quality</a>
+<a href="index.html#findings">Findings</a>
+<a href="index.html#hospitals">Hospitals</a>
+<a href="frontier.html">Efficient Frontier</a>
+<a class="on" href="stories.html">The Stories</a>
+<span class="sp"></span>
+<a href="stories-gr.html">Ελληνικά</a>
+</div></nav>
+<main>
+<section>
+
+<div class="story"><span class="k">1 · The error</span>
+<h2>The warrant that spelled out the truth</h2>
+<p>The platform says Rhodes hospital paid TAKEDA <b>€18,590,421</b>. The scanned warrant, same protocol number, writes the amount in words:</p>
+<blockquote>"# 185,904.21 # — one hundred eighty-five thousand nine hundred four euros and twenty-one cents"</blockquote>
+<p>Someone typed the amount without the decimal — one hundred times over. The same pattern appears 26 times nationally, up to €235M on a single invoice. <a class="ada" href="https://diavgeia.gov.gr/doc/ΨΤ6Τ46907Κ-8ΕΘ">ΑΔΑ: ΨΤ6Τ46907Κ-8ΕΘ</a></p>
+<p class="moral">The paper always held the right answer — nobody was looking.</p>
+</div>
+
+<div class="story"><span class="k">2 · The absurd</span>
+<h2>Five chest drains, €13.5 million</h2>
+<p>Ioannina published a payment of <b>€13,510,364</b>. The document describes the purchase: five chest-drain units at €240 each, total <b>€1,488</b>. The platform's "amount"? The product's catalogue code — ΚΩΔ.013510364 — typed into the wrong field. <a class="ada" href="https://diavgeia.gov.gr/doc/63Ι646906Ω-Ξ0Φ">ΑΔΑ: 63Ι646906Ω-Ξ0Φ</a></p>
+<p class="moral">No system ever asked: can one chest drain cost €2.7 million?</p>
+</div>
+
+<div class="story"><span class="k">3 · The live one</span>
+<h2>The €999 million "payment" — published while we were writing</h2>
+<p>In June 2025, while this audit was underway, Volos hospital published a <b>€999,117,743</b> payment to a medical supplier. The number is, digit for digit, the company's tax ID: 999117743. Our filter caught it automatically — the platform did not. <a class="ada" href="https://diavgeia.gov.gr/doc/9ΡΥΖ4690ΒΩ-0Θ0">ΑΔΑ: 9ΡΥΖ4690ΒΩ-0Θ0</a></p>
+<p class="moral">The errors are not history; they are produced at a steady rate, today.</p>
+</div>
+
+<div class="story"><span class="k">4 · The scale</span>
+<h2>"…and 148 others"</h2>
+<p>The largest "warrant" in the sample: <b>€172 million</b> at Σωτηρία hospital, payable to one named individual "and 148 others". It was not a purchase — it was hundreds of salaries compressed into a single record, leaving one employee's name as the hospital's largest apparent "supplier". In our own first pass, this artifact made Σωτηρία look suspiciously concentrated — we corrected it publicly.</p>
+<p class="moral">Without document-level checking, even the auditor produces false accusations.</p>
+</div>
+
+<div class="story"><span class="k">5 · The market</span>
+<h2>The discount that vanished in nine months</h2>
+<p>February 2022: Rhodes buys KEYTRUDA at <b>€1,883</b> per box — 19% below the official hospital price of €2,332. November 2022: same drug, same hospital, <b>€2,216</b>. The contract itself explains why, verbatim:</p>
+<blockquote>"…amended by the company's document no. 18641/29-08-2022 regarding a change of commercial pricing policy for the product in question"</blockquote>
+<p>Across the 100 contracts we parsed, patented drugs sell at the tariff; discounts exist only where biosimilars compete. <a class="ada" href="https://diavgeia.gov.gr/doc/Ψ9Π346907Κ-ΣΟΚ">ΑΔΑ: Ψ9Π346907Κ-ΣΟΚ</a> · <a class="ada" href="https://diavgeia.gov.gr/doc/Ψ4ΛΝ46907Κ-ΝΔΨ">Ψ4ΛΝ46907Κ-ΝΔΨ</a></p>
+<p class="moral">Volume buys nothing. Competition buys everything.</p>
+</div>
+
+<div class="story"><span class="k">6 · The tender</span>
+<h2>"The following offer was submitted" — singular</h2>
+<p>When Rhodes' international security tender stalled in competitors' appeals, the hospital ran a simplified procedure. The committee's minutes record the outcome in one revealing singular: <em>the following offer</em> was submitted — one. The company that submitted it won; in 2026, in another tender, it was again the only bidder. <a class="ada" href="https://diavgeia.gov.gr/doc/9ΕΩΠ46907Κ-4ΥΨ">ΑΔΑ: 9ΕΩΠ46907Κ-4ΥΨ</a></p>
+<p class="moral">Formally competitive; effectively a one-player market. The problem isn't the hospital — it's the thin market.</p>
+</div>
+
+<div class="story"><span class="k">7 · The "supplier"</span>
+<h2>The company that didn't exist</h2>
+<p>For years, Rhodes' second-largest "supplier" was called "TECHNICAL SUPPORT OF RHODES HOSPITAL" — €2.15M in recurring payments just under the direct-award ceiling. It looked like textbook bid-splitting. The warrants revealed the truth: it is not a company — it is the accounting system's label for the electromechanical-maintenance consortium, under a properly tendered contract. <a class="ada" href="https://diavgeia.gov.gr/doc/ΨΦΓΣ46907Κ-ΛΗΧ">ΑΔΑ: ΨΦΓΣ46907Κ-ΛΗΧ</a></p>
+<p class="moral">Payment data alone would have convicted the innocent. The documents acquitted.</p>
+</div>
+
+<div class="story"><span class="k">8 · The acquittal</span>
+<h2>The hospital that simply spent little</h2>
+<p>Κέρκυρα had everything a concealment case needs: last place in data quality, 40% below peers in spend per bed, shrinking records. Its published annual accounts — confirmed to the cent by a second document — showed the low numbers are real: the hospital genuinely spends little. Its bad score is sloppy field completion, not hidden money. <a class="ada" href="https://diavgeia.gov.gr/doc/ΨΝΣΗ4690Β3-7Β0">ΑΔΑ: ΨΝΣΗ4690Β3-7Β0</a></p>
+<p class="moral">The same method that detects, acquits. That is what makes it credible.</p>
+</div>
+
+</section>
+</main>
+<footer>
+  <div class="wrap">Independent research · every document public on Diavgeia and in the <a href="https://github.com/Petropov/diavgeia-hospitals">repository</a> · <a href="stories-gr.html">Ελληνικά</a></div>
+</footer>
+</body>
+</html>
