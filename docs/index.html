@@ -96,6 +96,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
 </table>
 <p class="small">The gap lives <em>inside every peer group</em>, not between groups: the country's best publisher (99.1) and its worst (36.8) are both medium general hospitals. Publishing quality is not explained by size, resources or complexity — it is administrative practice. Notably, the large hospitals, with the most resources, place no one above 86.</p>
 <p>The index predicts reality: in the random audit, the hospitals independently classified as clean produced zero errors in 120 documents; the known-worst produced the most. Several major hospitals publish <em>zero</em> budget codes, making machine oversight of what money was spent on impossible.</p>
+<h3>Is it getting better? The year-by-year trajectory</h3>
+<p>A single 2021-vs-2025 comparison hides the direction of travel, so we measured quality per year across all 50 hospitals:</p>
+<table>
+<tr><th>Year</th><th class="r">Named payment records</th><th class="r">Anonymous share</th><th class="r">Budget-code (KAE) completion</th><th class="r">Absurd-amount errors / 100k records</th></tr>
+<tr><td>2021*</td><td class="r">43,970</td><td class="r">13.9%</td><td class="r">75.3%</td><td class="r">—</td></tr>
+<tr><td>2022</td><td class="r">93,038</td><td class="r">14.6%</td><td class="r">73.0%</td><td class="r">11.0</td></tr>
+<tr><td>2023</td><td class="r">100,945</td><td class="r">13.8%</td><td class="r">69.9%</td><td class="r">5.1</td></tr>
+<tr><td>2024</td><td class="r">118,891</td><td class="r">11.8%</td><td class="r">72.4%</td><td class="r">10.4</td></tr>
+<tr><td>2025</td><td class="r">138,868</td><td class="r">11.3%</td><td class="r">70.8%</td><td class="r">8.3</td></tr>
+<tr><td>2026*</td><td class="r">94,676</td><td class="r">10.7%</td><td class="r bad">66.8%</td><td class="r">—</td></tr>
+</table>
+<p class="small">*Partial years (window starts Aug 2021, ends Aug 2026). Volume growth partly reflects hospitals migrating onto the Β.2.2 type.</p>
+<p>The trajectory is <b>split</b>. The "to whom" axis improves steadily: anonymous payments fell from ~14% to ~11%, and record volume tripled as laggard hospitals joined. The "for what" axis <em>deteriorates</em>: budget-code completion has slid from 75% to 67%, with 2026 the worst year on record — the Rhodes KAE collapse we documented was not an outlier but an instance of a national trend. And the error rate shows <b>no improvement at all</b>: absurd-magnitude records keep appearing at a steady ~5–11 per 100k in every year, including a fresh €999M tax-ID-as-amount error published in June 2025. Nobody has built the validation layer; the platform is getting bigger, not cleaner.</p>
+
 <h3>The loudest quality signal is silence</h3>
 <p>Crete's two largest hospitals — ΠΑΓΝΗ and Βενιζέλειο, under a joint administration — publish <b>no payment records at all</b>. In five recent months ΠΑΓΝΗ posted 3,732 decisions, including 1,450 procurement awards and commitments up to €11.8M — and zero payment orders. Procurement fully visible; money out, completely dark. Other Cretan hospitals publish normally: this is an institutional practice, not a technical one.</p>
 <p>It exposes a perverse incentive in transparency measurement: bad data lowers your score, but <em>no data exempts you from scoring entirely</em>. Any ranking that silently drops non-reporters rewards the most opaque institutions. Our totals list these hospitals explicitly as "non-reporting at the payment layer".</p>
